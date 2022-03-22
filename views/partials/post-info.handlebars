@@ -1,0 +1,11 @@
+<article class="post">
+      <div class="title">
+          //NEED TO FILL THIS IN
+        <textarea>{{title}}</textarea>
+      </div>
+      <div class="meta">
+        Watched by {{user.username}} on {{format_date created_at}}
+        |
+        <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+      </div>
+    </article>
