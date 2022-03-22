@@ -1,5 +1,12 @@
 <section>
-  <h2>Create New Post</h2>
+  <label for="movie-search">Search for movie</label>
+  <input type="text" id="movie-search" name="movie-search">
+  <button id="searchMovie">Search</button>
+  <div id="movielist"></div>
+</section>
+
+<section>
+  <h2>New Movie Review</h2>
 
   <form class="new-post-form">
     <div>
@@ -27,5 +34,5 @@
   </ol>
 </section>
 {{/if}}
-
 <script src="/javascript/add-post.js"></script>
+<script src="/javascript/movie-search.js"></script>
