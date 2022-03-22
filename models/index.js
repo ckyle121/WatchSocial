@@ -12,6 +12,34 @@ Post.belongsTo(User, {
   foreignKey: "user_id",
 });
 
+User.belongsToMany(Post, {
+  through: Rating,
+  as: 'rated_posts',
+  foreignKey: 'user_id'
+});
+
+Post.belongsToMany(User, {
+  through: Rating,
+  as: 'rated_posts',
+  foreignKey: 'post_id'
+});
+
+Rating.belongsTo(User, {
+  foreignKey: 'user_id'
+});
+
+Rating.belongsTo(Post, {
+  foreignKey: 'post_id'
+});
+
+User.hasMany(Rating, {
+  foreignKey: 'user_id'
+});
+
+Post.hasOne(Rating, {
+  foreignKey: 'post_id'
+});
+
 Comment.belongsTo(User, {
   foreignKey: "user_id",
 });

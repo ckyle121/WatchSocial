@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Post, User, Comment } = require('../../models');
+const { Post, User, Comment, Rating } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // get all users
@@ -11,7 +11,8 @@ router.get('/', (req, res) => {
       'id',
       'post_text',
       'title',
-      'created_at'
+      'created_at',
+      [sequelize.literal('(SELECT movie_rating FROM rating WHERE post.id = rating.post_id)'), 'rating']
     ],
     include: [
       {
@@ -44,7 +45,8 @@ router.get('/:id', (req, res) => {
       'id',
       'post_text',
       'title',
-      'created_at'
+      'created_at',
+      [sequelize.literal('(SELECT movie_rating FROM rating WHERE post.id = rating.post_id)'), 'rating']
     ],
     include: [
       {
@@ -78,7 +80,8 @@ router.post('/', withAuth, (req, res) => {
   Post.create({
     title: req.body.title,
     post_text: req.body.post_text,
-    user_id: req.session.user_id
+    user_id: req.session.user_id,
+    movie_rating: req.session.movie_rating
   })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {

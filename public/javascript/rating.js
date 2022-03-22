@@ -1,24 +1,17 @@
 const ratingStars = document.getElementsByClassName("rating__star");
 
 async function executeRating(stars){
-    const starClassActive = "rating__star fas fa-star";
-    const starClassInactive = "rating__star far fa-star";
-    const starsLength = stars.length;
+    console.log(executeRating);
 
     let i; 
     stars.map((star) => {
         i = stars.indexOf(star);
-
-        if (star.className === starClassInactive){
+        
             for (i; i>= 0; --i) {
-                stars[i].className = starClassActive;
+                stars[i].classList.remove('far fa-star') 
+                stars[i].classList.add("fas fa-star")
             }
-        } else {
-            for (i; i < starsLength; ++i) {
-                stars[i].className = starClassInactive;
-            }
-        }
     });
 }
 
-document.querySelector('').addEventListener('click', executeRating);
+document.querySelector('rating').addEventListener('click', executeRating(ratingStars));

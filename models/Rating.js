@@ -29,9 +29,16 @@ Rating.init(
         movie_rating: {
             type: DataTypes.INTEGER,
             allowNull: false,
-
-        }
-    }
+            defaultValue: 0
+        },
+    },
+    {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: "rating",
+  }
 );
 
 module.exports = Rating;
