@@ -19,7 +19,7 @@ Post.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    post_comment: {
+    post_text: {
       type: DataTypes.STRING,
       allowNull: false,
     },
