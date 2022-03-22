@@ -1,6 +1,7 @@
 const Post = require("./Post");
 const User = require("./User");
 const Comment = require("./Comment");
+const Rating = require("./Rating");
 
 User.hasMany(Post, {
   foreignKey: "user_id",
@@ -28,4 +29,4 @@ Post.hasMany(Comment, {
   onDelete: "CASCADE",
 });
 
-module.exports = { User, Post, Comment };
+module.exports = { User, Post, Comment, Rating };
