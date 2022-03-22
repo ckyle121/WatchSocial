@@ -28,8 +28,7 @@ Rating.init(
         },
         movie_rating: {
             type: DataTypes.INTEGER,
-            allowNull: false,
-            defaultValue: 0
+            allowNull: false
         },
     },
     {

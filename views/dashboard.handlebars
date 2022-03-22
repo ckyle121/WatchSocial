@@ -15,12 +15,12 @@
       <label for="movie-year">Year</label>
       <input type="text" id="movie-year" name="movie-year" readonly='true'/>
     </div>
-    <div class="rating">
-         <i class="rating__star far fa-star"></i>
-         <i class="rating__star far fa-star"></i>
-         <i class="rating__star far fa-star"></i>
-         <i class="rating__star far fa-star"></i>
-         <i class="rating__star far fa-star"></i>
+    <div class="rating" name="rating">
+         <i class="rating__star far fa-star" data-rating="1"></i>
+         <i class="rating__star far fa-star" data-rating="2"></i>
+         <i class="rating__star far fa-star" data-rating="3"></i>
+         <i class="rating__star far fa-star" data-rating="4"></i>
+         <i class="rating__star far fa-star" data-rating="5"></i>
     </div>
     <div>
       <label for="post-text">Your Review</label>
@@ -45,3 +45,4 @@
 {{/if}}
 <script src="/javascript/add-post.js"></script>
 <script src="/javascript/movie-search.js"></script>
+<script src="/javascript/rating.js"></script>

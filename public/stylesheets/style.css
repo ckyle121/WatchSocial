@@ -40,6 +40,7 @@ button:hover {
 .post-list {
   margin: 0;
   padding: 0;
+  list-style: none
 }
 
 textarea, input {
@@ -129,10 +130,11 @@ main {
   color: #7d7d7d;
 }
 
-
-.upvote-btn:hover {
-  background-color: #1f9c13;
+h8 {
+  font-size: 125%;
+  color:#ffe23d
 }
+
 
 .comment-form {
   margin-bottom: 5%;

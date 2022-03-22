@@ -17,4 +17,5 @@ function executeRating(stars) {
     };
   });
 }
-executeRating(ratingStars);
+
+executeRating(ratingStars)
