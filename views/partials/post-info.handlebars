@@ -1,11 +1,24 @@
 <article class="post">
       <div class="title">
-          //NEED TO FILL THIS IN
-        <textarea>{{title}}</textarea>
+        <a href="/posts/{{id}}"><h8>{{title}}</h8></a>
       </div>
+
+      <div class="rating" name="rating">Rated:
+         <i class="rating__star far fa-star" data-rating="1"></i>
+         <i class="rating__star far fa-star" data-rating="2"></i>
+         <i class="rating__star far fa-star" data-rating="3"></i>
+         <i class="rating__star far fa-star" data-rating="4"></i>
+         <i class="rating__star far fa-star" data-rating="5"></i>
+      </div>
+
+      <div class="post-text">
+        <p>{{post_text}}</p>
+      </div>
+
       <div class="meta">
-        Watched by {{user.username}} on {{format_date created_at}}
+        Watched by @{{user.username}} on {{format_date created_at}}
         |
         <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
       </div>
+      
     </article>

@@ -5,14 +5,17 @@ async function newFormHandler(event) {
 
   const title = document.querySelector('input[name="post-title"]').value;
   const post_text = document.querySelector('textarea[name="post-text"]').value;
+  const movie_rating = document.querySelector('div[class=rating').value;
 
-  console.log(title, post_text);
+
+  console.log(title, post_text, movie_rating);
 
   const response = await fetch(`/api/posts`, {
     method: "POST",
     body: JSON.stringify({
       title,
       post_text,
+      movie_rating
     }),
     headers: {
       "Content-Type": "application/json",
@@ -21,6 +24,7 @@ async function newFormHandler(event) {
 
   if (response.ok) {
     document.location.replace("/dashboard");
+    console.log(title, post_text, movie_rating);
   } else {
     alert(response.statusText);
   }

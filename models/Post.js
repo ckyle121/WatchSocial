@@ -1,7 +1,27 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Post extends Model {}
+class Post extends Model {
+  static rating(body, models){
+    return models.Rating.create({
+        user_id: body.user_id,
+        post_id: body.post_id
+    }).then(() => {
+        return Post.findOne({
+            where: {
+                id: body.post_id
+            },
+            attributes: [
+                'id',
+                'post_url',
+                'title',
+                'created_at',
+                [sequelize.literal('(SELECT movie_rating FROM rating WHERE post.id = rating.post_id)'), 'movie_rating']
+            ]
+        });
+    });
+}
+}
 
 Post.init(
   {
@@ -13,10 +33,6 @@ Post.init(
     },
     title: {
       type: DataTypes.STRING,
-      allowNull: false,
-    },
-    movie_rating: {
-      type: DataTypes.INTEGER,
       allowNull: false,
     },
     post_text: {

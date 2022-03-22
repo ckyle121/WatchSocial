@@ -1,6 +1,7 @@
 const Post = require("./Post");
 const User = require("./User");
 const Comment = require("./Comment");
+const Rating = require("./Rating");
 
 User.hasMany(Post, {
   foreignKey: "user_id",
@@ -9,6 +10,34 @@ User.hasMany(Post, {
 
 Post.belongsTo(User, {
   foreignKey: "user_id",
+});
+
+User.belongsToMany(Post, {
+  through: Rating,
+  as: 'rated_posts',
+  foreignKey: 'user_id'
+});
+
+Post.belongsToMany(User, {
+  through: Rating,
+  as: 'rated_posts',
+  foreignKey: 'post_id'
+});
+
+Rating.belongsTo(User, {
+  foreignKey: 'user_id'
+});
+
+Rating.belongsTo(Post, {
+  foreignKey: 'post_id'
+});
+
+User.hasMany(Rating, {
+  foreignKey: 'user_id'
+});
+
+Post.hasOne(Rating, {
+  foreignKey: 'post_id'
 });
 
 Comment.belongsTo(User, {
@@ -28,4 +57,4 @@ Post.hasMany(Comment, {
   onDelete: "CASCADE",
 });
 
-module.exports = { User, Post, Comment };
+module.exports = { User, Post, Comment, Rating };
