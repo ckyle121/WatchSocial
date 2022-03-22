@@ -1,4 +1,22 @@
 {
+  "name": "watchsocial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snew430/WatchSocial.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/snew430/WatchSocial/issues"
+  },
+  "homepage": "https://github.com/snew430/WatchSocial#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.2",
@@ -8,23 +26,5 @@
     "express-session": "^1.17.2",
     "mysql2": "^2.3.3",
     "sequelize": "^6.17.0"
-  },
-  "scripts": {
-    "start": "node server.js"
-  },
-  "name": "watchsocial",
-  "description": "",
-  "version": "1.0.0",
-  "main": "server.js",
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/snew430/WatchSocial.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/snew430/WatchSocial/issues"
-  },
-  "homepage": "https://github.com/snew430/WatchSocial#readme"
+  }
 }
