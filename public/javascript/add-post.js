@@ -1,3 +1,5 @@
+const movieList = document.querySelector("#movielist");
+
 async function newFormHandler(event) {
   event.preventDefault();
 
@@ -27,3 +29,14 @@ async function newFormHandler(event) {
 document
   .querySelector(".new-post-form")
   .addEventListener("submit", newFormHandler);
+
+// Use the choose button from a movie and populate the info
+document.addEventListener("click", function (e) {
+  if (e.target && e.target.className == "movieChoice") {
+    console.log(e.target.parentElement.childNodes);
+    document.querySelector("#post-title").value =
+      e.target.parentElement.childNodes[0].textContent;
+    document.querySelector("#movie-year").value =
+      e.target.parentElement.childNodes[2].textContent;
+  }
+});
