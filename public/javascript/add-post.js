@@ -5,7 +5,7 @@ async function newFormHandler(event) {
 
   const title = document.querySelector('input[name="post-title"]').value;
   const post_text = document.querySelector('textarea[name="post-text"]').value;
-  const movie_rating = document.querySelectorAll('[class=rating__star fas fa-star]');
+  const movie_rating = document.querySelector('div[class=rating').value;
 
 
   console.log(title, post_text, movie_rating);

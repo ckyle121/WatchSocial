@@ -19,4 +19,9 @@ module.exports = {
             .split('/')[0]
             .split('?')[0];
     },
+    add_rating: star => {
+        for (let i = 0; i < movie_rating.length; i++) {
+            
+        }
+    }
 };
