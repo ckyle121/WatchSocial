@@ -13,6 +13,7 @@ async function newFormHandler(event) {
     body: JSON.stringify({
       title,
       post_text,
+      movie_rating
     }),
     headers: {
       "Content-Type": "application/json",

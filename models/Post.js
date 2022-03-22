@@ -16,7 +16,7 @@ class Post extends Model {
                 'post_url',
                 'title',
                 'created_at',
-                [sequelize.literal('(SELECT movie_rating FROM rating WHERE post.id = rating.post_id)'), 'rating']
+                [sequelize.literal('(SELECT movie_rating FROM rating WHERE post.id = rating.post_id)'), 'movie_rating']
             ]
         });
     });

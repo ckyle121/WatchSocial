@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
       'post_text',
       'title',
       'created_at',
-      [sequelize.literal('(SELECT movie_rating FROM rating WHERE post.id = rating.post_id)'), 'rating']
+      [sequelize.literal('(SELECT movie_rating FROM rating WHERE post.id = rating.post_id)'), 'movie_rating']
     ],
     include: [
       {
@@ -46,7 +46,7 @@ router.get('/:id', (req, res) => {
       'post_text',
       'title',
       'created_at',
-      [sequelize.literal('(SELECT movie_rating FROM rating WHERE post.id = rating.post_id)'), 'rating']
+      [sequelize.literal('(SELECT movie_rating FROM rating WHERE post.id = rating.post_id)'), 'movie_rating']
     ],
     include: [
       {
