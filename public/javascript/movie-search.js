@@ -1,11 +1,14 @@
 function movieSearch() {
+  // imdb get request
   const requestOptions = {
     method: "GET",
     redirect: "follow",
   };
   const apiKey = "k_m6r8p68f";
   const searchOption = document.querySelector("#movie-search").value;
+  // search bar value set to nothing
   document.querySelector("#movie-search").value = "";
+  // if there is something in the search bar, fetch request
   if (searchOption) {
     fetch(
       `https://imdb-api.com/API/Search/${apiKey}/${searchOption}`,
@@ -35,9 +38,15 @@ function showMovies(movies) {
     let movieYear = document.createElement("p");
     movieYear.textContent = movies.results[i].description;
 
+    let chooseBtn = document.createElement("button");
+    chooseBtn.textContent = "Choose";
+    chooseBtn.className = "movieChoice";
+
+    // append everything
     movie.appendChild(movieTitle);
     movie.appendChild(movieImage);
     movie.appendChild(movieYear);
+    movie.appendChild(chooseBtn);
     movieList.appendChild(movie);
   }
 }
