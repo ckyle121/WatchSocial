@@ -7,7 +7,6 @@ async function newFormHandler(event) {
   const post_text = document.querySelector('textarea[name="post-text"]').value;
   const movie_rating = document.querySelectorAll(".fas").length;
 
-  // console.log(title, post_text, movie_rating);
 
   const response = await fetch(`/api/posts`, {
     method: "POST",

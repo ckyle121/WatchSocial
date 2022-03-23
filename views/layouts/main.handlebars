@@ -12,15 +12,14 @@
     <div class="wrapper">
       <header>
         <h1>
-          <a href="/">WatchSocial</a>
+          <a href="/">Watch Social</a>
         </h1>
         <nav>
-          <a href="/">home</a>
           {{#if loggedIn}}
-            <a href="/dashboard">dashboard</a>
-            <button id="logout" class="btn-no-style">logout</button>
+          <a href="/dashboard" class="dashboard">Dashboard</a>
+          <button id="logout" class="btn-no-style dashboard">Log Out</button>
           {{else}}
-            <a href="/login">login</a>
+          <a href="/login" class="dashboard">Log In</a>
           {{/if}}
         </nav>
       </header>
