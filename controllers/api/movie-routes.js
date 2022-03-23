@@ -55,7 +55,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.post("/", withAuth, (req, res) => {
+router.post("/", (req, res) => {
   Movie.create({
     id: req.body.id,
     title: req.body.title,
