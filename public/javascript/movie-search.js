@@ -26,6 +26,7 @@ function showMovies(movies) {
   const movieList = document.querySelector("#movieList");
   //   for loop for top 5 movies of the search
   for (let i = 0; i < 5; i++) {
+    console.log(movies.results[i]);
     // create a div element for each movie
     let movie = document.createElement("div");
     // get an image for the movie
@@ -35,8 +36,8 @@ function showMovies(movies) {
     let movieTitle = document.createElement("h3");
     movieTitle.textContent = movies.results[i].title;
     // year of the movie
-    let movieYear = document.createElement("p");
-    movieYear.textContent = movies.results[i].description;
+    let movieId = document.createElement("p");
+    movieId.textContent = movies.results[i].id;
 
     let chooseBtn = document.createElement("button");
     chooseBtn.textContent = "Choose";
@@ -45,7 +46,7 @@ function showMovies(movies) {
     // append everything
     movie.appendChild(movieTitle);
     movie.appendChild(movieImage);
-    movie.appendChild(movieYear);
+    movie.appendChild(movieId);
     movie.appendChild(chooseBtn);
     movieList.appendChild(movie);
   }
