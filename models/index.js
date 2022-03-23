@@ -12,11 +12,11 @@ Movie.hasMany(Comment, {
   foreignKey: "movie_id",
 });
 
-Comment.hasOne(User, {
+Comment.belongsTo(User, {
   foreignKey: "user_id",
 });
 
-Comment.hasOne(Movie, {
+Comment.belongsTo(Movie, {
   foreignKey: "movie_id",
 });
 

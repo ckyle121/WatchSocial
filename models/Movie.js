@@ -6,11 +6,11 @@ class Movie extends Model {}
 Movie.init(
   {
     id: {
-      type: DataTypes.String,
+      type: DataTypes.STRING,
       primaryKey: true,
     },
     title: {
-      type: DataTypes.String,
+      type: DataTypes.STRING,
       allowNull: false,
     },
   },
