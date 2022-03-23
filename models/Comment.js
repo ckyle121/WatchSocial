@@ -27,16 +27,16 @@ Comment.init(
       },
     },
     movie_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: "movie",
+        model: "post",
         key: "id",
       },
     },
     movie_rating: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: false
     },
   },
   {
