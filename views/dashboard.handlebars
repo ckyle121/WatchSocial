@@ -30,14 +30,15 @@
   </form>
 </section>
 
-{{#if posts.length}}
+{{#if comments.length}}
 <section>
-  <h2>Your Posts</h2>
+  <h2>Your Comments</h2>
   <ol>
-    {{#each posts as |post|}}
+    {{#each comments as |comment|}}
     <li>
-      {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+      {{!-- ?????????????? --}}
+      {{> post-info comment}}
+      <a href="/dashboard/edit/{{comment.id}}" class="edit-link">Edit comment</a>
     </li>
     {{/each}}
   </ol>
