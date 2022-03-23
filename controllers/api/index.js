@@ -5,7 +5,7 @@ const movieRoutes = require("./movie-routes");
 const commentRoutes = require("./comment-routes");
 
 router.use("/users", userRoutes);
-router.use("/posts", movieRoutes);
+router.use("/movie", movieRoutes);
 router.use("/comments", commentRoutes);
 
 module.exports = router;

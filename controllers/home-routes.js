@@ -33,7 +33,7 @@ router.get("/", (req, res) => {
 });
 
 // get single post
-router.get("/posts/:id", (req, res) => {
+router.get("/movie/:id", (req, res) => {
   Movie.findOne({
     where: {
       id: req.params.id,
