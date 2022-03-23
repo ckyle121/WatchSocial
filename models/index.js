@@ -1,7 +1,5 @@
-// const Post = require("./Post");
 const User = require("./User");
 const Comment = require("./Comment");
-// const Rating = require("./Rating");
 const Movie = require("./Movie");
 
 User.hasMany(Comment, {
@@ -75,4 +73,4 @@ Comment.belongsTo(Movie, {
 // });
 
 module.exports = { User, Comment, Movie };
-// module.exports = { User, Post, Comment, Rating };
+
