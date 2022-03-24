@@ -30,10 +30,14 @@ function showMovies(movies) {
     // create a div element for each movie
     let movie = document.createElement("div");
     movie.setAttribute("data-id", movies.results[i].id);
+    movie.className = "movieListSingleEl";
     // get an image for the movie
     let movieImage = document.createElement("img");
     movieImage.setAttribute("src", movies.results[i].image);
     // title of movie
+    let movieInfo = document.createElement("div");
+    movieInfo.className = "container";
+
     let movieTitle = document.createElement("h3");
     movieTitle.textContent = movies.results[i].title;
     // year of the movie
@@ -46,10 +50,13 @@ function showMovies(movies) {
     chooseBtn.className = "movieChoice";
 
     // append everything
-    movie.appendChild(movieTitle);
+    movieInfo.appendChild(movieTitle);
+    movieInfo.appendChild(movieId);
+    movieInfo.appendChild(chooseBtn);
+
     movie.appendChild(movieImage);
-    movie.appendChild(movieId);
-    movie.appendChild(chooseBtn);
+    movie.appendChild(movieInfo);
+
     movieList.appendChild(movie);
   }
 }
