@@ -7,7 +7,7 @@ html {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: sans-serif;
+  font-family: 'Overpass', sans-serif;
   color: #333;
   background-color: #7c7c7c;
 }
@@ -85,7 +85,9 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 1%;
+  font-size: 1.75rem;
 }
+
 
 header h1 {
   font-size: 1em;
@@ -138,9 +140,6 @@ h8 {
   color: #ffe23d;
 }
 
-.comment-form {
-  margin-bottom: 5%;
-}
 
 .comment {
   padding: 1%;
@@ -161,9 +160,6 @@ h8 {
   width: 300px;
 }
 
-.edit-post-form {
-  margin-bottom: 5%;
-}
 
 footer {
   border-top: 1px solid #ccc;
