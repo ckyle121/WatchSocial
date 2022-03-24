@@ -3,8 +3,10 @@ const movieList = document.querySelector("#movielist");
 async function newFormHandler(event) {
   event.preventDefault();
 
-  const title = document.querySelector("#movie-title").value;
-  const post_text = document.querySelector('textarea[name="post-text"]').value;
+  const title = document.querySelector("#movie-title").textContent;
+  const comment_text = document.querySelector(
+    'textarea[name="post-text"]'
+  ).value;
   const movie_rating = document.querySelectorAll(".fas").length;
   const movie_id = document
     .querySelector("#movie-title")
@@ -28,10 +30,10 @@ async function newFormHandler(event) {
     });
   }
 
-  const comment = await fetch(`/api/comment`, {
+  const comment = await fetch(`/api/comments`, {
     method: "POST",
     body: JSON.stringify({
-      post_text,
+      comment_text,
       movie_id,
       movie_rating,
     }),
