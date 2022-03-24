@@ -58,12 +58,13 @@ document
 // Use the choose button from a movie and populate the info
 document.addEventListener("click", function (e) {
   if (e.target && e.target.className == "movieChoice") {
-    console.log(e.target.parentElement.childNodes);
+    console.log(e.target.parentElement.parentElement);
     document.querySelector("#movie-title").innerText =
       e.target.parentElement.childNodes[0].textContent;
-    const movie_id = e.target.parentElement.getAttribute("data-id");
+    const movie_id =
+      e.target.parentElement.parentElement.getAttribute("data-id");
     document.querySelector("#movie-title").setAttribute("data-id", movie_id);
-    const moviePoster = e.target.parentElement.childNodes[1].src;
+    const moviePoster = e.target.parentElement.parentElement.childNodes[0].src;
     document.querySelector("#movie-poster").setAttribute("src", moviePoster);
   }
 });
