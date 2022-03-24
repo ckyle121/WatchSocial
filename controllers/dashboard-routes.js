@@ -36,11 +36,15 @@ router.get("/", withAuth, (req, res) => {
 router.get("/edit/:id", withAuth, (req, res) => {
   // ???????????????
   Comment.findByPk(req.params.id, {
-    attributes: ["id", "comment_text", "movie_id", "movie_rating"],
+    attributes: ["id", "comment_text", "movie_id", "movie_rating", "created_at"],
     include: [
       {
         model: Movie,
         attributes: ["title", "poster"],
+      },
+      {
+        model: User,
+        attributes: ["username"],
       },
     ],
   })
