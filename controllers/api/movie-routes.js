@@ -57,7 +57,7 @@ router.get("/:id", (req, res) => {
 
 router.post("/", withAuth, (req, res) => {
   Movie.create({
-    id: req.body.id,
+    id: req.body.movie_id,
     title: req.body.title,
   })
     .then((dbMovieData) => res.json(dbMovieData))
