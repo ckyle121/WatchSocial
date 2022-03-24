@@ -6,13 +6,33 @@ async function newFormHandler(event) {
   const title = document.querySelector('input[name="post-title"]').value;
   const post_text = document.querySelector('textarea[name="post-text"]').value;
   const movie_rating = document.querySelectorAll(".fas").length;
+  const movie_id = document
+    .querySelector('input[name="post-title"]')
+    .getAttribute("data-id");
 
+  const movieResponse = await fetch(`/api/movie/${movie_id}`, {
+    method: "GET",
+  });
 
-  const response = await fetch(`/api/posts`, {
+  console.log(movieResponse);
+  if (!movieResponse.ok) {
+    const postNewMovie = await fetch(`/api/movie`, {
+      method: "POST",
+      body: JSON.stringify({
+        movie_id,
+        title,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  }
+
+  const comment = await fetch(`/api/comment`, {
     method: "POST",
     body: JSON.stringify({
-      title,
       post_text,
+      movie_id,
       movie_rating,
     }),
     headers: {
@@ -20,9 +40,8 @@ async function newFormHandler(event) {
     },
   });
 
-  if (response.ok) {
+  if (comment.ok) {
     document.location.replace("/dashboard");
-    console.log(title, post_text, movie_rating);
   } else {
     alert(response.statusText);
   }
@@ -35,10 +54,10 @@ document
 // Use the choose button from a movie and populate the info
 document.addEventListener("click", function (e) {
   if (e.target && e.target.className == "movieChoice") {
-    console.log(e.target.parentElement.childNodes);
     document.querySelector("#post-title").value =
       e.target.parentElement.childNodes[0].textContent;
-    document.querySelector("#movie-year").value =
-      e.target.parentElement.childNodes[2].textContent;
+    const movie_id = e.target.parentElement.getAttribute("data-id");
+    console.log(movie_id);
+    document.querySelector("#post-title").setAttribute("data-id", movie_id);
   }
 });
