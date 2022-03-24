@@ -6,7 +6,7 @@ const withAuth = require("../../utils/auth");
 router.get("/", (req, res) => {
   console.log("======================");
   Movie.findAll({
-    attributes: ["id", "title"],
+    attributes: ["id", "title", "poster"],
     include: [
       {
         model: Comment,
@@ -30,7 +30,7 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "title"],
+    attributes: ["id", "title", "poster"],
     include: [
       {
         model: Comment,
@@ -59,6 +59,7 @@ router.post("/", withAuth, (req, res) => {
   Movie.create({
     id: req.body.movie_id,
     title: req.body.title,
+    poster: req.body.poster,
   })
     .then((dbMovieData) => res.json(dbMovieData))
     .catch((err) => {
