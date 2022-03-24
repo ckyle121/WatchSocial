@@ -1,7 +1,8 @@
 <ol class="post-list">
   {{#each movies as |movie|}}
-  <li>
-    {{> post-info post}}
-  </li>
+    <li>
+      <a href="/movie/{{id}}"><h3>{{title}}</h3></a>
+      <img src="{{poster}}" alt="" />
+    </li>
   {{/each}}
 </ol>
