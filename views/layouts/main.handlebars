@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Watch Social</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/stylesheets/style.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.0/css/all.css" integrity="sha384-eLT4eRYPHTmTsFGFAzjcCWX+wHfUInVWNm9YnwpiatljsZOwXtwV2Hh6sHM6zZD9" crossorigin="anonymous">
 </head>
@@ -12,11 +14,11 @@
     <div class="wrapper">
       <header>
         <h1>
-          <a href="/">Watch Social</a>
+          <a href="/">WatchSocial</a>
         </h1>
         <nav>
           {{#if loggedIn}}
-          <a href="/dashboard" class="dashboard">Dashboard</a>
+          <a href="/dashboard" class="dashboard">My Dashboard</a>
           <button id="logout" class="btn-no-style dashboard">Log Out</button>
           {{else}}
           <a href="/login" class="dashboard">Log In</a>
