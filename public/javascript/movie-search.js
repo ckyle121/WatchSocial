@@ -29,6 +29,7 @@ function showMovies(movies) {
     console.log(movies.results[i]);
     // create a div element for each movie
     let movie = document.createElement("div");
+    movie.setAttribute("data-id", movies.results[i].id);
     // get an image for the movie
     let movieImage = document.createElement("img");
     movieImage.setAttribute("src", movies.results[i].image);
@@ -37,7 +38,7 @@ function showMovies(movies) {
     movieTitle.textContent = movies.results[i].title;
     // year of the movie
     let movieId = document.createElement("p");
-    movieId.textContent = movies.results[i].id;
+    movieId.textContent = movies.results[i].description;
 
     let chooseBtn = document.createElement("button");
     chooseBtn.textContent = "Choose";
