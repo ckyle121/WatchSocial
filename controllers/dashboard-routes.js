@@ -15,7 +15,7 @@ router.get("/", withAuth, (req, res) => {
     include: [
       {
         model: Movie,
-        attributes: ["title"],
+        attributes: ["title", "poster"],
       },
       {
         model: User,
@@ -40,7 +40,7 @@ router.get("/edit/:id", withAuth, (req, res) => {
     include: [
       {
         model: Movie,
-        attributes: ["title"],
+        attributes: ["title", "poster"],
       },
       {
         model: User,
