@@ -6,7 +6,7 @@ const { Movie, User, Comment } = require("../models");
 router.get("/", (req, res) => {
   console.log("======================");
   Movie.findAll({
-    attributes: ["id", "title"],
+    attributes: ["id", "title", "poster"],
     include: [
       {
         model: Comment,
@@ -38,7 +38,7 @@ router.get("/posts/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "title"],
+    attributes: ["id", "title", "poster"],
     include: [
       {
         model: Comment,

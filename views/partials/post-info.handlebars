@@ -1,18 +1,20 @@
 <article class="post">
-      <div class="title">
-        <a href="/movie/{{movie.id}}"><h8>{{movie.title}}</h8></a>
-      </div>
+  <div class="title">
+    <a href="/movie/{{movie.id}}"><h8>{{movie.title}}</h8></a>
+    <img src="{{movie.poster}}" alt="" />
+  </div>
 
-      <div class="rating" name="rating">
-        Rating here
-      </div>
+  <div class="rating" name="rating">
+    Rating here
+  </div>
 
-      <div class="post-text">
-        <p>{{comment_text}}</p>
-      </div>
-
-      <div class="meta">
-        Watched by @{{user.username}} on {{format_date created_at}}
-      </div>
+  <div class="post-text">
+    <p>{{comment_text}}</p>
+  </div>
+  
+   <div class="meta">
+    Watched by @{{user.username}} on {{format_date created_at}}
+   </div>
       
-    </article>
+</article>
+
