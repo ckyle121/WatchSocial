@@ -60,12 +60,12 @@ router.get("/edit/:id", withAuth, (req, res) => {
       },
     ],
   })
-    .then((dbPostData) => {
-      if (dbPostData) {
-        const post = dbPostData.get({ plain: true });
+    .then((dbCommentData) => {
+      if (dbCommentData) {
+        const comment = dbCommentData.get({ plain: true });
 
         res.render("edit-post", {
-          post,
+          comment,
           loggedIn: true,
         });
       } else {
