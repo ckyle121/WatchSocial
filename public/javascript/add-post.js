@@ -3,11 +3,11 @@ const movieList = document.querySelector("#movielist");
 async function newFormHandler(event) {
   event.preventDefault();
 
-  const title = document.querySelector('input[name="post-title"]').value;
+  const title = document.querySelector("#movie-title").value;
   const post_text = document.querySelector('textarea[name="post-text"]').value;
   const movie_rating = document.querySelectorAll(".fas").length;
   const movie_id = document
-    .querySelector('input[name="post-title"]')
+    .querySelector("#movie-title")
     .getAttribute("data-id");
 
   const movieResponse = await fetch(`/api/movie/${movie_id}`, {
@@ -54,10 +54,9 @@ document
 // Use the choose button from a movie and populate the info
 document.addEventListener("click", function (e) {
   if (e.target && e.target.className == "movieChoice") {
-    document.querySelector("#post-title").value =
+    document.querySelector("#movie-title").innerText =
       e.target.parentElement.childNodes[0].textContent;
     const movie_id = e.target.parentElement.getAttribute("data-id");
-    console.log(movie_id);
-    document.querySelector("#post-title").setAttribute("data-id", movie_id);
+    document.querySelector("#movie-title").setAttribute("data-id", movie_id);
   }
 });
