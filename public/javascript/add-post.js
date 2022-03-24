@@ -54,6 +54,7 @@ document
 // Use the choose button from a movie and populate the info
 document.addEventListener("click", function (e) {
   if (e.target && e.target.className == "movieChoice") {
+    console.log(e.target.parentElement.childNodes[0].textContent);
     document.querySelector("#post-title").value =
       e.target.parentElement.childNodes[0].textContent;
     const movie_id = e.target.parentElement.getAttribute("data-id");
