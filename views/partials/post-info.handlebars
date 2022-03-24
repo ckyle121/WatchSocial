@@ -11,22 +11,15 @@
   <div class="post-text">
     <p>{{comment_text}}</p>
   </div>
-
-<<<<<<< HEAD
       <div class="meta">
         Watched by @{{user.username}} on {{format_date created_at}}
       </div>
       
     </article>
-=======
-  <div class="meta">
-    Watched by @{{user.username}}
-    on
-    {{format_date created_at}}
-    |
-    <a href="/post/{{id}}">{{comments.length}}
-      {{format_plural "comment" comments.length}}</a>
-  </div>
-
+  
+   <div class="meta">
+    Watched by @{{user.username}} on {{format_date created_at}}
+   </div>
+      
 </article>
->>>>>>> d3691b5be5f586a9fab6a65ddeefdc00f172068c
+
