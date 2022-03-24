@@ -5,9 +5,9 @@
   </h2>
   <form class="edit-post-form">
     <div>
-      <input name="post-title" type="text" value="{{post.title}}" />
+      <h8>{{movie.title}}</h8>
+      <p>{{comment.comment_text}}</p>
 
-      <span>({{post.post_text}})</span>
 
     </div>
       |
@@ -18,14 +18,10 @@
 
 <form class="comment-form">
   <div>
-    <textarea name="comment-body"></textarea>
-  </div>
-
-  <div>
-    <button type="submit">Add Comment</button>
+    <textarea id="comment-text"></textarea>
   </div>
 </form>
 
-<script src="/javascript/edit-blog .js"></script>
+<script src="/javascript/edit-blog.js"></script>
 <script src="/javascript/delete-blog.js"></script>
 <script src="/javascript/comment.js"></script>

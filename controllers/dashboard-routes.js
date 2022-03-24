@@ -11,11 +11,17 @@ router.get("/", withAuth, (req, res) => {
     where: {
       user_id: req.session.user_id,
     },
-    attributes: ["id", "comment_text", "movie_id", "movie_rating", "created_at"],
+    attributes: [
+      "id",
+      "comment_text",
+      "movie_id",
+      "movie_rating",
+      "created_at",
+    ],
     include: [
       {
         model: Movie,
-        attributes: ["title", "poster"],
+        attributes: ["id", "title", "poster"],
       },
       {
         model: User,
@@ -36,11 +42,17 @@ router.get("/", withAuth, (req, res) => {
 router.get("/edit/:id", withAuth, (req, res) => {
   // ???????????????
   Comment.findByPk(req.params.id, {
-    attributes: ["id", "comment_text", "movie_id", "movie_rating", "created_at"],
+    attributes: [
+      "id",
+      "comment_text",
+      "movie_id",
+      "movie_rating",
+      "created_at",
+    ],
     include: [
       {
         model: Movie,
-        attributes: ["title", "poster"],
+        attributes: ["id", "title", "poster"],
       },
       {
         model: User,

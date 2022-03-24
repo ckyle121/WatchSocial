@@ -33,7 +33,7 @@ router.get("/", (req, res) => {
 });
 
 // get single post
-router.get("/posts/:id", (req, res) => {
+router.get("/movie/:id", (req, res) => {
   Movie.findOne({
     where: {
       id: req.params.id,
@@ -42,7 +42,14 @@ router.get("/posts/:id", (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: ["id", "comment_text", "movie_id", "user_id", "created_at"],
+        attributes: [
+          "id",
+          "comment_text",
+          "movie_id",
+          "user_id",
+          "movie_rating",
+          "created_at",
+        ],
         include: {
           model: User,
           attributes: ["username"],

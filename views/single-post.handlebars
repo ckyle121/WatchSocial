@@ -1,17 +1,17 @@
-{{> post-info post}}
+<h2>{{movie.title}}</h2>
+<img src="{{movie.poster}}" alt="" />
 
 {{#if loggedIn}}
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
-
-  <div>
-    <button type="submit">Add Comment</button>
-  </div>
-</form>
+  <ol>
+    {{#each movie.comments as |comment|}}
+      <li>
+        {{comment.comment_text}}
+        {{comment.movie_rating}}
+      </li>
+    {{/each}}
+  </ol>
 {{/if}}
 
-{{#if loggedIn}}
-<script src="/javascript/comment.js"></script>
-{{/if}}
+{{!-- {{#if loggedIn}}
+  <script src="/javascript/comment.js"></script>
+{{/if}} --}}
