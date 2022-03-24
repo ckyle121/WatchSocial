@@ -36,7 +36,7 @@ Comment.init(
     },
     movie_rating: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: false
     },
   },
   {
