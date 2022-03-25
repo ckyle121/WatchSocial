@@ -29,6 +29,7 @@ router.put("/:id", (req, res) => {
   Comment.update(
     {
       comment_text: req.body.comment_text,
+      movie_rating: req.body.movie_rating,
     },
     {
       where: {

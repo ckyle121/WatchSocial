@@ -24,9 +24,12 @@ function movieSearch() {
 
 function showMovies(movies) {
   const movieList = document.querySelector("#movieList");
+  // if movielist has child elements, remove them for the next search
+  while (movieList.firstChild) {
+    movieList.removeChild(movieList.firstChild);
+  }
   //   for loop for top 5 movies of the search
   for (let i = 0; i < 5; i++) {
-    console.log(movies.results[i]);
     // create a div element for each movie
     let movie = document.createElement("div");
     movie.setAttribute("data-id", movies.results[i].id);

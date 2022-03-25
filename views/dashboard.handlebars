@@ -28,9 +28,9 @@
 </section>
 
 {{#if comments.length}}
-<section>
-  <h2>Your Reviews</h2>
-  <ol class="post-list">
+<section class="">
+  <h2 class="">Your Reviews</h2>
+  <ol class="post-list d-flex">
     {{#each comments as |comment|}}
     <li>
       {{> post-info comment}}

@@ -2,9 +2,13 @@
 
 <h6>{{comment.movie.title}}</h6>
 <div>
-  {{#times comment.movie_rating}}
-    <i class="rating__star fas fa-star"></i>
-  {{/times}}
+  <div class="rating" name="rating">
+    <i class="rating__star far fa-star"></i>
+    <i class="rating__star far fa-star"></i>
+    <i class="rating__star far fa-star"></i>
+    <i class="rating__star far fa-star"></i>
+    <i class="rating__star far fa-star"></i>
+  </div>
 </div>
 <img src="{{comment.movie.poster}}" alt="" />
 
@@ -19,3 +23,4 @@
 
 <script src="/javascript/edit-blog.js"></script>
 <script src="/javascript/delete-blog.js"></script>
+<script src="/javascript/rating.js"></script>
