@@ -7,8 +7,10 @@
     <img src="{{movie.poster}}" alt="" />
   </div>
 
-  <div class="rating" name="rating">
-    Rating here
+  <div>
+    {{#times comment.movie_rating}}
+      <i class="rating__star fas fa-star"></i>
+    {{/times}}
   </div>
 
   <div class="post-text">
@@ -16,9 +18,7 @@
   </div>
 
   <div class="meta">
-    Watched by @{{user.username}}
-    on
-    {{format_date created_at}}
+    Watched by @{{user.username}} on {{format_date created_at}}
   </div>
 
 </article>
