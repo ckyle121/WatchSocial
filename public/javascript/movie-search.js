@@ -36,9 +36,9 @@ function showMovies(movies) {
     movieImage.setAttribute("src", movies.results[i].image);
     // title of movie
     let movieInfo = document.createElement("div");
-    movieInfo.className = "container";
+    movieInfo.className = "container d-grid gap-2";
 
-    let movieTitle = document.createElement("h3");
+    let movieTitle = document.createElement("h4");
     movieTitle.textContent = movies.results[i].title;
     // year of the movie
     let movieId = document.createElement("p");

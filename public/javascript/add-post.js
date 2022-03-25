@@ -13,6 +13,16 @@ async function newFormHandler(event) {
     .querySelector("#movie-title")
     .getAttribute("data-id");
 
+  // console.log(movie_rating_length);
+  // let ratingArr = [];
+  // for (let i = 0; i < movie_rating_length; i++) {
+  //   ratingArr.push(i);
+  // }
+
+  // console.log(ratingArr);
+  // const movie_rating = JSON.stringify(ratingArr);
+  // console.log(movie_rating);
+
   const movieResponse = await fetch(`/api/movie/${movie_id}`, {
     method: "GET",
   });
