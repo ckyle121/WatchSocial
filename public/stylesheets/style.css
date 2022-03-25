@@ -9,7 +9,7 @@ html {
   margin: 0;
   font-family: "Overpass", sans-serif;
   color: #333;
-  background-color: #7c7c7c;
+  background: -webkit-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%);
 }
 
 a {
