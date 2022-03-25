@@ -47,8 +47,7 @@ function showMovies(movies) {
     let chooseBtn = document.createElement("button");
     chooseBtn.setAttribute("href", "#movie-title");
     chooseBtn.textContent = "Choose";
-    chooseBtn.className = "movieChoice btn";
-    chooseBtn.setAttribute("type", "button");
+    chooseBtn.className = "movieChoice";
 
     // append everything
     movieInfo.appendChild(movieTitle);

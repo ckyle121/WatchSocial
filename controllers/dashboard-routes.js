@@ -62,7 +62,6 @@ router.get("/edit/:id", withAuth, (req, res) => {
     .then((dbCommentData) => {
       if (dbCommentData) {
         const comment = dbCommentData.get({ plain: true });
-
         res.render("edit-post", {
           comment,
           loggedIn: true,
@@ -74,7 +73,6 @@ router.get("/edit/:id", withAuth, (req, res) => {
     .catch((err) => {
       res.status(500).json(err);
     });
-  console.log(comment);
 });
 
 module.exports = router;

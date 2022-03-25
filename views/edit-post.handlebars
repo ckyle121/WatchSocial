@@ -1,8 +1,13 @@
 <h2>Edit Your Movie Review</h2>
 
 <h6>{{comment.movie.title}}</h6>
+<div>
+  {{#times comment.movie_rating}}
+    <i class="rating__star fas fa-star"></i>
+  {{/times}}
+</div>
 <img src="{{comment.movie.poster}}" alt="" />
-<h8>{{comment.movie_rating}}</h8>
+
 <p>{{comment.comment_text}}</p>
 
 <div>
