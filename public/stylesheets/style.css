@@ -38,7 +38,7 @@ button {
 }
 
 .post-list {
-  margin: 0;
+  margin: 0.25rem;
   padding: 0;
   list-style: none;
 }
@@ -114,18 +114,9 @@ main {
   color: #f7d200;
 }
 
-.save-post-btn,
-.delete-post-btn {
-  margin: 1rem;
-}
 
 .delete-post-btn {
   background-color: #d41414;
-}
-
-.delete-post-btn:hover,
-.save-post-btn:hover {
-  size-adjust: 110%;
 }
 
 .post {
@@ -178,8 +169,8 @@ img {
   padding: 0.25rem;
 }
 
-.rating {
-  width: 180px;
+img:hover {
+  opacity: 0.5;
 }
 
 .rating__star {
@@ -206,6 +197,3 @@ img {
   padding: 2px 16px;
 }
 
-img:hover {
-  opacity: 0.5;
-}

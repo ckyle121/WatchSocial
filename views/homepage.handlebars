@@ -1,8 +1,11 @@
-<ol class="post-list">
+<h1 class="display-4 text-center">WatchSocial</h1>
+<p class="text-center">Catchphrase about the Website</p>
+
+<ol class="d-flex flex-wrap justify-content-between">
   {{#each movies as |movie|}}
-    <li>
+    <div>
       <a href="/movie/{{id}}"><h3>{{title}}</h3></a>
-      <img src="{{poster}}" alt="" />
-    </li>
+      <img src="{{poster}}" class="border border-warning"/>
+    </div>
   {{/each}}
 </ol>
