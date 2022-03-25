@@ -41,7 +41,10 @@ router.get("/", withAuth, (req, res) => {
 
 router.get("/edit/:id", withAuth, (req, res) => {
   // ???????????????
-  Comment.findByPk(req.params.id, {
+  Comment.findOne({
+    where: {
+      id: req.params.id,
+    },
     attributes: [
       "id",
       "comment_text",
@@ -75,6 +78,7 @@ router.get("/edit/:id", withAuth, (req, res) => {
     .catch((err) => {
       res.status(500).json(err);
     });
+  console.log(comment);
 });
 
 module.exports = router;

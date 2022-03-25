@@ -36,9 +36,9 @@ function showMovies(movies) {
     movieImage.setAttribute("src", movies.results[i].image);
     // title of movie
     let movieInfo = document.createElement("div");
-    movieInfo.className = "container";
+    movieInfo.className = "container d-grid gap-2";
 
-    let movieTitle = document.createElement("h3");
+    let movieTitle = document.createElement("h4");
     movieTitle.textContent = movies.results[i].title;
     // year of the movie
     let movieId = document.createElement("p");
@@ -47,7 +47,8 @@ function showMovies(movies) {
     let chooseBtn = document.createElement("button");
     chooseBtn.setAttribute("href", "#movie-title");
     chooseBtn.textContent = "Choose";
-    chooseBtn.className = "movieChoice";
+    chooseBtn.className = "movieChoice btn";
+    chooseBtn.setAttribute("type", "button");
 
     // append everything
     movieInfo.appendChild(movieTitle);

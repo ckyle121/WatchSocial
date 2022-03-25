@@ -1,16 +1,16 @@
 <h2>Edit Your Movie Review</h2>
 
-<h6>{{movie.title}}</h6>
+<h6>{{comment.movie.title}}</h6>
+<img src="{{comment.movie.poster}}" alt="" />
 <h8>{{comment.movie_rating}}</h8>
 <p>{{comment.comment_text}}</p>
 
 <div>
-  <textarea id='comment-text'></textarea>
+  <textarea id="comment-text"></textarea>
 </div>
 
-<button type='button' class='save-post-btn'>Save Post</button>
-<button type='button' class='delete-post-btn'>Delete Post</button>
+<button type="button" class="save-post-btn">Save Post</button>
+<button type="button" class="delete-post-btn">Delete Post</button>
 
-
-<script src='/javascript/edit-blog.js'></script>
-<script src='/javascript/delete-blog.js'></script>
+<script src="/javascript/edit-blog.js"></script>
+<script src="/javascript/delete-blog.js"></script>
