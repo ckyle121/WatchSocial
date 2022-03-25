@@ -7,9 +7,9 @@
     <img src="{{movie.poster}}" alt="" />
   </div>
 
-  <div class="rating" name="rating">
-    Rating here
-  </div>
+  {{#times movie_rating}}
+    <i class="rating__star fas fa-star"></i>
+  {{/times}}
 
   <div class="post-text">
     <p>{{comment_text}}</p>

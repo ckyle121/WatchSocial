@@ -7,21 +7,15 @@ async function newFormHandler(event) {
   const comment_text = document.querySelector(
     'textarea[name="post-text"]'
   ).value;
-  const movie_rating = document.querySelectorAll(".fas").length;
+  const movie_rating = document
+    .querySelector(".rating")
+    .querySelectorAll(".fas").length;
   const poster = document.querySelector("#movie-poster").getAttribute("src");
   const movie_id = document
     .querySelector("#movie-title")
     .getAttribute("data-id");
 
-  // console.log(movie_rating_length);
-  // let ratingArr = [];
-  // for (let i = 0; i < movie_rating_length; i++) {
-  //   ratingArr.push(i);
-  // }
-
-  // console.log(ratingArr);
-  // const movie_rating = JSON.stringify(ratingArr);
-  // console.log(movie_rating);
+  console.log(movie_rating);
 
   const movieResponse = await fetch(`/api/movie/${movie_id}`, {
     method: "GET",

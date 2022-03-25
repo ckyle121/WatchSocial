@@ -16,8 +16,6 @@ function executeRating(stars) {
       }
     };
   });
-  console.log(stars);
-  console.log(stars.length);
 }
 
 executeRating(ratingStars);

@@ -8,7 +8,9 @@
     {{#each movie.comments as |comment|}}
       <li>
         {{comment.comment_text}}
-        {{comment.movie_rating}}
+        {{#times comment.movie_rating}}
+          <i class="rating__star fas fa-star"></i>
+        {{/times}}
       </li>
     {{/each}}
   </ol>
