@@ -1,4 +1,4 @@
-<article class="post">
+{{!-- <article class="post">
   <div class="title">
     <a href="/movie/{{movie.id}}"><h8>{{movie.title}}</h8></a>
   </div>
@@ -21,4 +21,22 @@
     {{format_date created_at}}
   </div>
 
-</article>
+</article> --}}
+
+<div class="card post mx-2" style="width: 10rem;">
+  <a href="/movie/{{movie.id}}"><h8 class="card-header">{{movie.title}}</h8></a>
+  <img src="{{movie.poster}}" class="card-img-top" alt="" />
+  <div class="card-body">
+    {{#times movie_rating}}
+      <i class="rating__star fas fa-star"></i>
+    {{/times}}
+    <p>{{movie_rating}}/5</p>
+
+    <p class="card-text">{{comment_text}}</p>
+    <div class="meta">
+      Watched by @{{user.username}}
+      on
+      {{format_date created_at}}
+    </div>
+  </div>
+</div>

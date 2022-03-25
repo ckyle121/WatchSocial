@@ -7,7 +7,7 @@ html {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: 'Overpass', sans-serif;
+  font-family: "Overpass", sans-serif;
   color: #333;
   background-color: #7c7c7c;
 }
@@ -33,8 +33,7 @@ button {
   cursor: pointer;
   border-radius: 5px;
 }
-
-button:hover {
+*/ button:hover {
   background-color: #683341;
 }
 
@@ -88,7 +87,6 @@ header {
   font-size: 1.75rem;
 }
 
-
 header h1 {
   font-size: 1em;
 }
@@ -116,7 +114,8 @@ main {
   color: #f7d200;
 }
 
-.save-post-btn, .delete-post-btn {
+.save-post-btn,
+.delete-post-btn {
   margin: 1rem;
 }
 
@@ -124,7 +123,8 @@ main {
   background-color: #d41414;
 }
 
-.delete-post-btn:hover, .save-post-btn:hover {
+.delete-post-btn:hover,
+.save-post-btn:hover {
   size-adjust: 110%;
 }
 
@@ -139,11 +139,11 @@ main {
   color: #7d7d7d;
 }
 
-h8, h6 {
+h8,
+h6 {
   font-size: 125%;
   color: #ffe23d;
 }
-
 
 .comment {
   padding: 1%;
@@ -159,7 +159,6 @@ h8, h6 {
 .new-post-form input {
   width: 300px;
 }
-
 
 footer {
   border-top: 1px solid #ccc;
@@ -205,4 +204,8 @@ img {
 
 .container {
   padding: 2px 16px;
+}
+
+img:hover {
+  opacity: 0.5;
 }

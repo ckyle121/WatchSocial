@@ -22,7 +22,9 @@ async function newFormHandler(event) {
   });
 
   console.log(movieResponse);
+  // check to see if the movie is in the database first
   if (!movieResponse.ok) {
+    // if not, add it
     const postNewMovie = await fetch(`/api/movie`, {
       method: "POST",
       body: JSON.stringify({

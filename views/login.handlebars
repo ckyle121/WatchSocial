@@ -1,11 +1,11 @@
-<form class="login-form">
-  <div>
+{{! <form class="login-form"> }}
+{{! <div>
     <label for="username-login">username:</label>
     <input type="text" id="username-login" />
   </div>
   <div>
     <label for="password-login">password:</label>
-    <input type="password" id="password-login"/>
+    <input type="password" id="password-login" />
   </div>
   <div>
     <button type="submit">Log In</button>
@@ -28,6 +28,65 @@
   <div>
     <button type="submit">Sign Up!</button>
   </div>
+</form> }}
+
+<form class="login-form">
+  <div class="mb-3">
+    <label for="username-login" class="form-label">Username</label>
+    <input type="text" class="form-control" id="username-login" />
+  </div>
+  <div class="mb-3">
+    <label for="password-login" class="form-label">Password</label>
+    <input type="password" class="form-control" id="password-login" />
+  </div>
+  <button type="submit">Submit</button>
 </form>
+
+<div
+  class="modal fade"
+  id="signUpModal"
+  tabindex="-1"
+  aria-labelledby="signUpModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="signUpModalLabel">Sign Up</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <form class="signup-form">
+        <div>
+          <label for="username-signup">username:</label>
+          <input type="text" id="username-signup" />
+        </div>
+        <div>
+          <label for="email-signup">e-mail:</label>
+          <input type="text" id="email-signup" />
+        </div>
+        <div>
+          <label for="password-signup">password:</label>
+          <input type="password" id="password-signup" />
+        </div>
+        <div>
+          <button type="submit">Sign Up!</button>
+        </div>
+      </form>
+      <div class="modal-footer">
+        <button type="button" data-bs-dismiss="modal">Close</button>
+        <button type="button">Sign Up</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button type="button" data-bs-toggle="modal" data-bs-target="#signUpModal">
+  Not a user? Sign up here...
+</button>
 
 <script src="/javascript/login.js"></script>
