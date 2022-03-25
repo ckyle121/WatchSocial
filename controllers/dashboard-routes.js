@@ -40,15 +40,7 @@ router.get("/", withAuth, (req, res) => {
 });
 
 router.get("/edit/:id", withAuth, (req, res) => {
-<<<<<<< HEAD
-  // ???????????????
-  Comment.findOne({
-    where: {
-      id: req.params.id,
-    },
-=======
   Comment.findByPk(req.params.id, {
->>>>>>> 48d0e2a6235253990c78745478c66399eff1e45c
     attributes: [
       "id",
       "comment_text",
