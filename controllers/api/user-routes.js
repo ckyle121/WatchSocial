@@ -5,6 +5,16 @@ const { User, Movie, Comment } = require("../../models");
 router.get("/", (req, res) => {
   User.findAll({
     attributes: { exclude: ["password"] },
+    include: [
+      {
+        model: Comment,
+        attributes: ["id", "comment_text", "movie_id", "user_id", "created_at"],
+        include: {
+          model: Movie,
+          attributes: ["title", "poster"],
+        },
+      },
+    ],
   })
     .then((dbUserData) => res.json(dbUserData))
     .catch((err) => {
