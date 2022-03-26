@@ -1,17 +1,25 @@
-<div class="d-flex flex-column align-items-center">
-  <h1 class="text-decoration-underline">{{movie.title}}</h1>
-  <img src="{{movie.poster}}" class="w-20" alt="" />
+<div
+  class="jumbotron"
+  style="background: url({{movie.poster}}) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"
+>
+<div class="container">
+    <h1 class="text-decoration-underline">{{movie.title}}</h1>
+  </div>
 </div>
 
-{{#if loggedIn}}
-  <ol>
-    {{#each movie.comments as |comment|}}
-      <li>
-        {{comment.comment_text}}
-        {{#times comment.movie_rating}}
-          <i class="rating__star fas fa-star"></i>
-        {{/times}}
-      </li>
-    {{/each}}
-  </ol>
-{{/if}}
+<div class="container">
+  {{#if loggedIn}}
+    <ol>
+      {{#each movie.comments as |comment|}}
+        <hr />
+        <li>
+          {{comment.comment_text}}
+          <br />
+          {{#times comment.movie_rating}}
+            <i class="rating__star fas fa-star"></i>
+          {{/times}}
+        </li>
+      {{/each}}
+    </ol>
+  {{/if}}
+</div>

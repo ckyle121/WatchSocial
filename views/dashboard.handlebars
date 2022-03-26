@@ -1,17 +1,49 @@
-<section>
-  <h2>Create a New Movie Review</h2>
+<section class="p-3">
+  <h2>&#8595 Search for a new movie to review right here &#8595</h2>
 
-  <section>
+  <section class="m-3">
     <label for="movie-search">Search for a Movie:</label>
     <input type="text" id="movie-search" name="movie-search">
     <button id="searchMovie">Search</button>
     <div id="movielist"></div>
+    <div id="try-again"></div>
   </section>
+</section>
 
-  <form class="new-post-form">
+{{#if comments.length}}
+<section class="">
+  <h2 class="">Your Reviews</h2>
+  <ol class="post-list d-flex">
+    {{#each comments as |comment|}}
+      {{> movie-card comment}}
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+
+<div
+  class="modal fade"
+  id="movieReview"
+  tabindex="-1"
+  aria-labelledby="movieReviewLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="movieReviewLabel"></h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+ <form class="new-post-form">
     <div>
-      <h8 id="movie-title"></h8>
-      <img id="movie-poster" src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="">
+      {{!-- <h8></h8> --}}
+      <img id="movie-poster" src="https://images.unsplash.com/photo-1579642761360-eabd1cca1e81?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="">
     </div>
     <div class="rating" name="rating">
          <i class="rating__star far fa-star"></i>
@@ -23,23 +55,15 @@
     <div>
       <textarea id="post-text" name="post-text"></textarea>
     </div>
-    <button type="submit" class="button">Create</button>
+    <button type="submit" class="button">Review This Movie!!!</button>
   </form>
-</section>
-
-{{#if comments.length}}
-<section class="">
-  <h2 class="">Your Reviews</h2>
-  <ol class="post-list d-flex">
-    {{#each comments as |comment|}}
-    <li class="mx-3">
-      {{> post-info comment}}
-      <a href="/dashboard/edit/{{id}}" class="edit-link">Edit Review</a>
-    </li>
-    {{/each}}
-  </ol>
-</section>
-{{/if}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" data-bs-dismiss="modal">Choose Another Movie Instead</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="/javascript/add-post.js"></script>
 <script src="/javascript/movie-search.js"></script>

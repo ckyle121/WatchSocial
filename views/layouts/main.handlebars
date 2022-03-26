@@ -25,9 +25,9 @@
 
   <body>
     <div class="wrapper">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Watch Social</a>
+          <a class="navbar-brand" href="/">Watch Social</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -43,7 +43,7 @@
             <div class="navbar-nav">
               {{#if loggedIn}}
                 <a class="nav-link" href="/dashboard">My Dashboard</a>
-                <a id="logout" class="nav-link">Log Out</a>
+                <a id="logout" class="nav-link" href="/">Log Out</a>
               {{else}}
                 <a href="/login" class="nav-link">Log In</a>
               {{/if}}
@@ -63,7 +63,6 @@
       <script src="/javascript/logout.js"></script>
     {{/if}}
   </body>
-
   <script
     src="https://kit.fontawesome.com/803b81f400.js"
     crossorigin="anonymous"
