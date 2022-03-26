@@ -3,7 +3,7 @@ const movieList = document.querySelector("#movielist");
 async function newFormHandler(event) {
   event.preventDefault();
 
-  const title = document.querySelector("#movie-title").textContent;
+  const title = document.querySelector("#movieReviewLabel").textContent;
   const comment_text = document.querySelector(
     'textarea[name="post-text"]'
   ).value;
@@ -12,7 +12,7 @@ async function newFormHandler(event) {
     .querySelectorAll(".fas").length;
   const poster = document.querySelector("#movie-poster").getAttribute("src");
   const movie_id = document
-    .querySelector("#movie-title")
+    .querySelector("#movieReviewLabel")
     .getAttribute("data-id");
 
   console.log(movie_rating);
@@ -65,11 +65,13 @@ document
 document.addEventListener("click", function (e) {
   if (e.target && e.target.className == "movieChoice") {
     console.log(e.target.parentElement.parentElement);
-    document.querySelector("#movie-title").innerText =
+    document.querySelector("#movieReviewLabel").innerText =
       e.target.parentElement.childNodes[0].textContent;
     const movie_id =
       e.target.parentElement.parentElement.getAttribute("data-id");
-    document.querySelector("#movie-title").setAttribute("data-id", movie_id);
+    document
+      .querySelector("#movieReviewLabel")
+      .setAttribute("data-id", movie_id);
     const moviePoster = e.target.parentElement.parentElement.childNodes[0].src;
     document.querySelector("#movie-poster").setAttribute("src", moviePoster);
   }

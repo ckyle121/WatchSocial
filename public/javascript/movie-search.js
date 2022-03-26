@@ -24,6 +24,7 @@ function movieSearch() {
 
 function showMovies(movies) {
   const movieList = document.querySelector("#movieList");
+  const tryAgain = document.querySelector("#try-again");
   // if movielist has child elements, remove them for the next search
   while (movieList.firstChild) {
     movieList.removeChild(movieList.firstChild);
@@ -43,13 +44,17 @@ function showMovies(movies) {
 
     let movieTitle = document.createElement("h4");
     movieTitle.textContent = movies.results[i].title;
+    movieTitle.className = "text-center";
     // year of the movie
     let movieId = document.createElement("p");
-    movieId.textContent = movies.results[i].description;
+    movieId.textContent = movies.results[i].description.substr(0, 6);
+    movieId.className = "text-center";
 
     let chooseBtn = document.createElement("button");
-    chooseBtn.setAttribute("href", "#movie-title");
-    chooseBtn.textContent = "Choose";
+    chooseBtn.setAttribute("type", "button");
+    chooseBtn.setAttribute("data-bs-toggle", "modal");
+    chooseBtn.setAttribute("data-bs-target", "#movieReview");
+    chooseBtn.textContent = "Choose This One";
     chooseBtn.className = "movieChoice";
 
     // append everything
@@ -61,6 +66,14 @@ function showMovies(movies) {
     movie.appendChild(movieInfo);
 
     movieList.appendChild(movie);
+  }
+
+  if (!tryAgain.firstChild) {
+    let tryAgainEl = document.createElement("a");
+    tryAgainEl.setAttribute("href", "/dashboard");
+    tryAgainEl.textContent =
+      "Didn't see what you were looking for? Try to get more specific. We aren't mind readers.";
+    tryAgain.appendChild(tryAgainEl);
   }
 }
 

@@ -1,0 +1,17 @@
+ <div class="movie-card">
+  <img
+    src="{{movie.poster}}"
+    class=""
+  ></img>
+  <div class="movie-review">
+    <a>{{movie.title}}</a><hr>
+    <a>{{#times movie_rating}}
+      <i class="rating__star fas fa-star"></i>
+    {{/times}}</a>
+    <p>{{movie_rating}}/5</p>
+    <p class="card-text">{{shortened_comment comment_text}}</p>
+    <hr>
+    <a href="/movie/{{movie.id}}">Check out all reviews, not just yours...</a><br>
+    <a href="/dashboard/edit/{{id}}" class="edit-link">Edit Review</a>
+  </div>
+</div>

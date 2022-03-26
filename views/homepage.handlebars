@@ -3,9 +3,14 @@
 
 <ol class="d-flex flex-wrap justify-content-between">
   {{#each movies as |movie|}}
-    <div>
-      <a href="/movie/{{id}}"><h3>{{title}}</h3></a>
-      <img src="{{poster}}" class="w-10 h-10 border border-warning"/>
-    </div>
+    <div class="movie-card">
+  <img
+    src="{{poster}}"
+    class=""
+  ></img>
+  <div class="movie-name">{{title}}</div>
+  <div class="movie-review"><a href="/movie/{{id}}">Check out reviews</a></div>
+</div>
   {{/each}}
 </ol>
+
