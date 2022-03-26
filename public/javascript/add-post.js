@@ -1,27 +1,22 @@
 const movieList = document.querySelector("#movielist");
-
+let currentMovie = {};
 async function newFormHandler(event) {
   event.preventDefault();
 
-  const title = document.querySelector("#movieReviewLabel").textContent;
+  const movie_id = currentMovie.movie_id;
+  const title = currentMovie.title;
+  const poster = currentMovie.poster;
   const comment_text = document.querySelector(
     'textarea[name="post-text"]'
   ).value;
   const movie_rating = document
     .querySelector(".rating")
     .querySelectorAll(".fas").length;
-  const poster = document.querySelector("#movie-poster").getAttribute("src");
-  const movie_id = document
-    .querySelector("#movieReviewLabel")
-    .getAttribute("data-id");
-
-  console.log(movie_rating);
 
   const movieResponse = await fetch(`/api/movie/${movie_id}`, {
     method: "GET",
   });
 
-  console.log(movieResponse);
   // check to see if the movie is in the database first
   if (!movieResponse.ok) {
     // if not, add it
@@ -64,15 +59,19 @@ document
 // Use the choose button from a movie and populate the info
 document.addEventListener("click", function (e) {
   if (e.target && e.target.className == "movieChoice") {
-    console.log(e.target.parentElement.parentElement);
-    document.querySelector("#movieReviewLabel").innerText =
-      e.target.parentElement.childNodes[0].textContent;
+    // get the title
+    const title = e.target.parentElement.childNodes[0].textContent;
+    document.querySelector("#movieReviewLabel").innerText = title;
+    // get the movie id
     const movie_id =
       e.target.parentElement.parentElement.getAttribute("data-id");
     document
       .querySelector("#movieReviewLabel")
       .setAttribute("data-id", movie_id);
-    const moviePoster = e.target.parentElement.parentElement.childNodes[0].src;
-    document.querySelector("#movie-poster").setAttribute("src", moviePoster);
+    // get the poster source
+    const poster = e.target.parentElement.parentElement.childNodes[0].src;
+    document.querySelector("#movie-poster").setAttribute("src", poster);
+
+    currentMovie = { title: title, movie_id: movie_id, poster: poster };
   }
 });

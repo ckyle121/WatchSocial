@@ -2,7 +2,7 @@
   class="jumbotron"
   style="background: url({{movie.poster}}) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"
 >
-<div class="container">
+  <div class="container">
     <h1 class="text-decoration-underline">{{movie.title}}</h1>
   </div>
 </div>
@@ -11,14 +11,17 @@
   {{#if loggedIn}}
     <ol>
       {{#each movie.comments as |comment|}}
-        <hr />
-        <li>
-          {{comment.comment_text}}
-          <br />
-          {{#times comment.movie_rating}}
-            <i class="rating__star fas fa-star"></i>
-          {{/times}}
-        </li>
+        <blockquote
+          class="blockquote blockquote-custom bg-white p-5 shadow rounded my-2"
+        >
+          <div class="blockquote-custom-icon bg-info shadow-sm">{{#times
+              comment.movie_rating
+            }}
+              <i class="rating__star fas fa-star"></i>
+            {{/times}}</div>
+          <p class="mb-0 mt-2 font-italic">"{{comment.comment_text}}"
+            <a href="#" class="text-info">@{{comment.user.username}}</a>.</p>
+        </blockquote>
       {{/each}}
     </ol>
   {{/if}}
