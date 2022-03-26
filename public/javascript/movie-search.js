@@ -30,7 +30,10 @@ function showMovies(movies) {
     movieList.removeChild(movieList.firstChild);
   }
   //   for loop for top 5 movies of the search
+  // let temp = "";
   for (let i = 0; i < 5; i++) {
+
+    // temp += `<div></div>`;
     // create a div element for each movie
     let movie = document.createElement("div");
     movie.setAttribute("data-id", movies.results[i].id);
@@ -67,6 +70,8 @@ function showMovies(movies) {
 
     movieList.appendChild(movie);
   }
+
+  // document.querySelector("").innerHTML = temp;
 
   if (!tryAgain.firstChild) {
     let tryAgainEl = document.createElement("a");

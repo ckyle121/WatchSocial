@@ -5,8 +5,6 @@ const withAuth = require("../utils/auth");
 
 // get all comments for dashboard
 router.get("/", withAuth, (req, res) => {
-  console.log(req.session);
-  console.log("======================");
   Comment.findAll({
     where: {
       user_id: req.session.user_id,
