@@ -27,36 +27,27 @@
     <div class="wrapper">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/">WatchSocial</a>
+          <a class="navbar-brand" href="#">Watch Social</a>
           <button
             class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
               {{#if loggedIn}}
-                <li class="nav-item">
-                  <a
-                    class="nav-link active"
-                    aria-current="page"
-                    href="/dashboard"
-                  >My Dashboard</a>
-                </li>
-                <li class="nav-link"><button
-                    id="logout"
-                    class="btn-no-style"
-                  >Log Out</button></li>
+                <a class="nav-link" href="/dashboard">My Dashboard</a>
+                <a id="logout" class="nav-link">Log Out</a>
               {{else}}
                 <a href="/login" class="nav-link">Log In</a>
               {{/if}}
-            </ul>
+            </div>
           </div>
         </div>
       </nav>

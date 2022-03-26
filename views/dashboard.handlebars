@@ -11,7 +11,7 @@
   <form class="new-post-form">
     <div>
       <h8 id="movie-title"></h8>
-      <img id="movie-poster" src="https://images.unsplash.com/photo-1579642761360-eabd1cca1e81?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="">
+      <img id="movie-poster" src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="">
     </div>
     <div class="rating" name="rating">
          <i class="rating__star far fa-star"></i>
@@ -32,7 +32,7 @@
   <h2 class="">Your Reviews</h2>
   <ol class="post-list d-flex">
     {{#each comments as |comment|}}
-    <li>
+    <li class="mx-3">
       {{> post-info comment}}
       <a href="/dashboard/edit/{{id}}" class="edit-link">Edit Review</a>
     </li>
