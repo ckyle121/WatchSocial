@@ -76,6 +76,35 @@ router.get("/movie/:id", (req, res) => {
     });
 });
 
+router.get("/users", (req, res) => {
+  User.findAll({
+    attributes: ["username"],
+    include: [
+      {
+        model: Comment,
+        attributes: ["id", "comment_text", "movie_id", "user_id", "created_at"],
+        order: ["created_at"],
+        include: {
+          model: Movie,
+          attributes: ["title", "poster"],
+        },
+      },
+    ],
+  })
+    .then((dbUserData) => {
+      const users = dbUserData.map((user) => user.get({ plain: true }));
+      console.log(users);
+      res.render("users", {
+        users,
+        loggedIn: req.session.loggedIn,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/");
