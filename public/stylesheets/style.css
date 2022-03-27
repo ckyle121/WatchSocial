@@ -234,6 +234,14 @@ img:hover {
   transition: all linear 0.25s;
 }
 
+.movie-card .movie-choice {
+  position: absolute;
+  bottom: 5px;
+  left: 35px;
+  /* color: #fff; */
+  font-size: 12px;
+}
+
 .movie-card:hover img {
   filter: grayscale(100%);
 }
