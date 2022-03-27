@@ -34,9 +34,7 @@ function showMovies(movies) {
   }
   //   for loop for top 5 movies of the search
   let temp = "";
-  console.log("temp");
   for (let i = 0; i < 5; i++) {
-    console.log(temp);
     temp += `<div class="movie-card" data-id=${movies.results[i].id}>
     <img src="${movies.results[i].image}"></img>
     <div class="movie-name">${movies.results[i].title}</div>
@@ -44,7 +42,7 @@ function showMovies(movies) {
       0,
       6
     )}</div>
-    <div class="movie-review"><button type="button" data-bs-toggle="modal" data-bs-target="#movieReview" class="movieChoice">Choose This One</button></div>
+    <div class="movie-choice"><button type="button" data-bs-toggle="modal" data-bs-target="#movieReview" class="movieChoice">Choose This One</button></div>
   </div>`;
 
     // let movie = document.createElement("div");

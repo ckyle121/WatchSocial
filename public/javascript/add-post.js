@@ -60,7 +60,8 @@ document
 document.addEventListener("click", function (e) {
   if (e.target && e.target.className == "movieChoice") {
     // get the title
-    const title = e.target.parentElement.childNodes[0].textContent;
+    const title =
+      e.target.parentElement.parentElement.childNodes[3].textContent;
     document.querySelector("#movieReviewLabel").innerText = title;
     // get the movie id
     const movie_id =
@@ -69,7 +70,7 @@ document.addEventListener("click", function (e) {
       .querySelector("#movieReviewLabel")
       .setAttribute("data-id", movie_id);
     // get the poster source
-    const poster = e.target.parentElement.parentElement.childNodes[0].src;
+    const poster = e.target.parentElement.parentElement.childNodes[1].src;
     document.querySelector("#movie-poster").setAttribute("src", poster);
 
     currentMovie = { title: title, movie_id: movie_id, poster: poster };
