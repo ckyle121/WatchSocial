@@ -1,7 +1,7 @@
-<section class="p-3">
+<section class="p-3 text-center">
   <h2>&#8595 Search for a new movie to review right here &#8595</h2>
 
-  <section class="m-3">
+  <section class="m-3 text-center">
     <label for="movie-search">Search for a Movie:</label>
     <input type="text" id="movie-search" name="movie-search">
     <button id="searchMovie">Search</button>
@@ -12,7 +12,7 @@
 
 {{#if comments.length}}
 <section class="">
-  <h2 class="">Your Reviews</h2>
+  <h2 class="">Your Review Board</h2>
   <ol class="post-list d-flex">
     {{#each comments as |comment|}}
       {{> movie-card comment}}

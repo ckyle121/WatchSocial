@@ -1,7 +1,7 @@
 <h1 class="display-4 text-center">WatchSocial</h1>
 <p class="text-center">Catchphrase about the Website</p>
 
-<ol class="d-flex flex-wrap justify-content-between">
+{{!-- <ol class="d-flex flex-wrap justify-content-between">
   {{#each movies as |movie|}}
     <div class="movie-card">
   <img
@@ -12,5 +12,15 @@
   <div class="movie-review"><a href="/movie/{{id}}">Check out reviews</a></div>
 </div>
   {{/each}}
-</ol>
+</ol> --}}
 
+<div class="container">
+  <div class="carousel">
+    {{#each movies as |movie|}}
+      <div
+        class="carousel__face"
+        style="background-image: url({{poster}});"
+      ><span>{{title}}</span></div>
+    {{/each}}
+  </div>
+</div>
