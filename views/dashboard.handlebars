@@ -2,22 +2,26 @@
   <h2>&#8595 Search for a new movie to review right here &#8595</h2>
 
   <section class="m-3 text-center">
-    <label for="movie-search">Search for a Movie:</label>
-    <input type="text" id="movie-search" name="movie-search">
-    <button id="searchMovie">Search</button>
-    <div id="movielist"></div>
+    <div class="mb-3">
+      <label for="movie-search">Search for a Movie:</label>
+      <input type="text" id="movie-search" name="movie-search">
+      <button id="searchMovie">Search</button>
+    </div>
+    <div class="userCardContainer w-100" id="movielist">
+      <h3 class="text-center w-100">&#8593 Search for a new movie to review right here &#8593</h3>
+    </div>
     <div id="try-again"></div>
   </section>
 </section>
 
 {{#if comments.length}}
-<section class="">
+<section class="container w-100">
   <h2 class="">Your Review Board</h2>
-  <ol class="post-list d-flex">
+  <div class="post-list row">
     {{#each comments as |comment|}}
       {{> movie-card comment}}
     {{/each}}
-  </ol>
+  </div>
 </section>
 {{/if}}
 

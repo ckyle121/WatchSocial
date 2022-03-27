@@ -350,3 +350,65 @@ span {
     transform: rotateY(-360deg);
   }
 }
+
+/* =========================== */
+
+.UserCardContainer {
+  /* position: absolute; */
+  height: 300px;
+  width: 600px;
+  /* top: 60px; */
+  /* left: calc(50% - 300px); */
+  display: flex;
+}
+
+.userCard {
+  display: flex;
+  height: 280px;
+  width: 200px;
+  background-color: #17141d;
+  border-radius: 10px;
+  box-shadow: -1rem 0 3rem #000;
+  /*   margin-left: -50px; */
+  transition: 0.4s ease-out;
+  position: relative;
+  left: 0px;
+}
+
+.userCard:not(:first-child) {
+  margin-left: -50px;
+}
+
+.userCard:hover {
+  transform: translateY(-20px);
+  transition: 0.4s ease-out;
+}
+
+.userCard:hover ~ .userCard {
+  position: relative;
+  left: 50px;
+  transition: 0.4s ease-out;
+}
+
+.title {
+  color: white;
+  font-size: medium;
+  font-weight: 200;
+  position: absolute;
+  left: 20px;
+  top: 15px;
+}
+
+.inner-text {
+  color: white;
+  font-weight: 300;
+  position: absolute;
+  left: 20px;
+  top: 55px;
+}
+
+.bottom-button {
+  position: absolute;
+  left: 20px;
+  bottom: 0px;
+}

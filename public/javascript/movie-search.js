@@ -35,15 +35,27 @@ function showMovies(movies) {
   //   for loop for top 5 movies of the search
   let temp = "";
   for (let i = 0; i < 5; i++) {
-    temp += `<div class="movie-card" data-id=${movies.results[i].id}>
-    <img src="${movies.results[i].image}"></img>
-    <div class="movie-name">${movies.results[i].title}</div>
-    <div class="movie-review">${movies.results[i].description.substr(
+    //   temp += `<div class="movie-card" data-id=${movies.results[i].id}>
+    //   <img src="${movies.results[i].image}"></img>
+    //   <div class="movie-name">${movies.results[i].title}</div>
+    //   <div class="movie-review">${movies.results[i].description.substr(
+    //     0,
+    //     6
+    //   )}</div>
+    //   <div class="movie-choice"><button type="button" data-bs-toggle="modal" data-bs-target="#movieReview" class="movieChoice">Choose This One</button></div>
+    // </div>`;
+
+    temp += `<div class="userCard" data-id=${
+      movies.results[i].id
+    } style="background-image: url('${movies.results[i].image}')">
+      <h3 class="title movie-name">${
+        movies.results[i].title
+      }</h3><div class="inner-text">${movies.results[i].description.substr(
       0,
       6
     )}</div>
-    <div class="movie-choice"><button type="button" data-bs-toggle="modal" data-bs-target="#movieReview" class="movieChoice">Choose This One</button></div>
-  </div>`;
+      <div class="bottom-button"><button type="button" data-bs-toggle="modal" data-bs-target="#movieReview" class="movieChoice">Choose This One</button></div>
+    </div>`;
 
     // let movie = document.createElement("div");
     // movie.setAttribute("data-id", movies.results[i].id);
