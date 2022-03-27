@@ -32,7 +32,10 @@
     {{#if comments.length}}
       <div class="userCardContainer w-100">
         {{#each comments as |comment|}}
-          <div class="userCard">
+          <div
+            class="userCard"
+            style="background-image: url('{{movie.poster}}')"
+          >
             <h3 class="title">{{movie.title}}</h3>
             <div class="inner-text">
               <a>{{#times movie_rating}}

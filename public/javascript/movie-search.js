@@ -56,40 +56,6 @@ function showMovies(movies) {
     )}</div>
       <div class="bottom-button"><button type="button" data-bs-toggle="modal" data-bs-target="#movieReview" class="movieChoice">Choose This One</button></div>
     </div>`;
-
-    // let movie = document.createElement("div");
-    // movie.setAttribute("data-id", movies.results[i].id);
-    // movie.className = "movieListSingleEl";
-
-    // let movieImage = document.createElement("img");
-    // movieImage.setAttribute("src", movies.results[i].image);
-    // // title of movie
-    // let movieInfo = document.createElement("div");
-    // movieInfo.className = "container d-grid gap-2";
-
-    // let movieTitle = document.createElement("h4");
-    // movieTitle.textContent = movies.results[i].title;
-    // movieTitle.className = "text-center";
-
-    // let movieId = document.createElement("p");
-    // movieId.textContent = movies.results[i].description.substr(0, 6);
-    // movieId.className = "text-center";
-
-    // let chooseBtn = document.createElement("button");
-    // chooseBtn.setAttribute("type", "button");
-    // chooseBtn.setAttribute("data-bs-toggle", "modal");
-    // chooseBtn.setAttribute("data-bs-target", "#movieReview");
-    // chooseBtn.textContent = "Choose This One";
-    // chooseBtn.className = "movieChoice";
-
-    // movieInfo.appendChild(movieTitle);
-    // movieInfo.appendChild(movieId);
-    // movieInfo.appendChild(chooseBtn);
-
-    // movie.appendChild(movieImage);
-    // movie.appendChild(movieInfo);
-
-    // movieList.appendChild(temp);
   }
 
   movieList.innerHTML = temp;

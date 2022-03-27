@@ -44,20 +44,19 @@
         ></button>
       </div>
       <div class="modal-body">
- <form class="new-post-form">
+ <form class="new-post-form d-flex flex-column justify-content-around align-items-center p-3">
     <div>
-      {{!-- <h8></h8> --}}
-      <img id="movie-poster" src="https://images.unsplash.com/photo-1579642761360-eabd1cca1e81?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="">
-    </div>
-    <div class="rating" name="rating">
+      <img id="movie-poster" src="" alt="">
+          <div class="rating" name="rating">
          <i class="rating__star far fa-star"></i>
          <i class="rating__star far fa-star"></i>
          <i class="rating__star far fa-star"></i>
          <i class="rating__star far fa-star"></i>
          <i class="rating__star far fa-star"></i>
     </div>
+    </div>
     <div>
-      <textarea id="post-text" name="post-text"></textarea>
+      <textarea class="w-100" id="post-text" name="post-text"></textarea>
     </div>
     <button type="submit" class="button">Review This Movie!!!</button>
   </form>
