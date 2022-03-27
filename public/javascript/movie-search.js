@@ -15,7 +15,10 @@ function movieSearch() {
       requestOptions
     )
       .then((response) => response.json())
-      .then((result) => showMovies(result))
+      .then((result) => {
+        console.log(result);
+        showMovies(result);
+      })
       .catch((error) => console.log("error", error));
   } else {
     alert("Please enter search information");
@@ -30,48 +33,56 @@ function showMovies(movies) {
     movieList.removeChild(movieList.firstChild);
   }
   //   for loop for top 5 movies of the search
-  // let temp = "";
+  let temp = "";
+  console.log("temp");
   for (let i = 0; i < 5; i++) {
+    console.log(temp);
+    temp += `<div class="movie-card" data-id=${movies.results[i].id}>
+    <img src="${movies.results[i].image}"></img>
+    <div class="movie-name">${movies.results[i].title}</div>
+    <div class="movie-review">${movies.results[i].description.substr(
+      0,
+      6
+    )}</div>
+    <div class="movie-review"><button type="button" data-bs-toggle="modal" data-bs-target="#movieReview" class="movieChoice">Choose This One</button></div>
+  </div>`;
 
-    // temp += `<div></div>`;
-    // create a div element for each movie
-    let movie = document.createElement("div");
-    movie.setAttribute("data-id", movies.results[i].id);
-    movie.className = "movieListSingleEl";
-    // get an image for the movie
-    let movieImage = document.createElement("img");
-    movieImage.setAttribute("src", movies.results[i].image);
-    // title of movie
-    let movieInfo = document.createElement("div");
-    movieInfo.className = "container d-grid gap-2";
+    // let movie = document.createElement("div");
+    // movie.setAttribute("data-id", movies.results[i].id);
+    // movie.className = "movieListSingleEl";
 
-    let movieTitle = document.createElement("h4");
-    movieTitle.textContent = movies.results[i].title;
-    movieTitle.className = "text-center";
-    // year of the movie
-    let movieId = document.createElement("p");
-    movieId.textContent = movies.results[i].description.substr(0, 6);
-    movieId.className = "text-center";
+    // let movieImage = document.createElement("img");
+    // movieImage.setAttribute("src", movies.results[i].image);
+    // // title of movie
+    // let movieInfo = document.createElement("div");
+    // movieInfo.className = "container d-grid gap-2";
 
-    let chooseBtn = document.createElement("button");
-    chooseBtn.setAttribute("type", "button");
-    chooseBtn.setAttribute("data-bs-toggle", "modal");
-    chooseBtn.setAttribute("data-bs-target", "#movieReview");
-    chooseBtn.textContent = "Choose This One";
-    chooseBtn.className = "movieChoice";
+    // let movieTitle = document.createElement("h4");
+    // movieTitle.textContent = movies.results[i].title;
+    // movieTitle.className = "text-center";
 
-    // append everything
-    movieInfo.appendChild(movieTitle);
-    movieInfo.appendChild(movieId);
-    movieInfo.appendChild(chooseBtn);
+    // let movieId = document.createElement("p");
+    // movieId.textContent = movies.results[i].description.substr(0, 6);
+    // movieId.className = "text-center";
 
-    movie.appendChild(movieImage);
-    movie.appendChild(movieInfo);
+    // let chooseBtn = document.createElement("button");
+    // chooseBtn.setAttribute("type", "button");
+    // chooseBtn.setAttribute("data-bs-toggle", "modal");
+    // chooseBtn.setAttribute("data-bs-target", "#movieReview");
+    // chooseBtn.textContent = "Choose This One";
+    // chooseBtn.className = "movieChoice";
 
-    movieList.appendChild(movie);
+    // movieInfo.appendChild(movieTitle);
+    // movieInfo.appendChild(movieId);
+    // movieInfo.appendChild(chooseBtn);
+
+    // movie.appendChild(movieImage);
+    // movie.appendChild(movieInfo);
+
+    // movieList.appendChild(temp);
   }
 
-  // document.querySelector("").innerHTML = temp;
+  movieList.innerHTML = temp;
 
   if (!tryAgain.firstChild) {
     let tryAgainEl = document.createElement("a");
