@@ -1,14 +1,4 @@
 {{!-- {{#each users as |user|}}
-  <div>
-    <h3>{{username}}</h3>
-    {{#each comments}}
-      <h5>Watched {{movie.title}}</h5>
-      <img src="{{movie.poster}}" alt="" />
-    {{/each}}
-  </div>
-{{/each}} --}}
-
-{{!-- {{#each users as |user|}}
 {{#if comments.length}}
 <section class="container w-100">
   <h2>{{username}}</h2>
@@ -51,7 +41,7 @@
               <p>{{movie_rating}}/5</p>
               <hr />
               <p class="">{{shortened_comment comment_text}}</p>
-              <a href="/movie/{{movie.id}}">Check out all reviews</a><br />
+              <a href="/movie/{{movie_id}}">Check out all reviews</a><br />
             </div>
           </div>
         {{/each}}
