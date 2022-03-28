@@ -18,8 +18,11 @@ router.get("/", (req, res) => {
     ],
   })
     .then((dbMovieData) => {
-      const movies = dbMovieData.map((movie) => movie.get({ plain: true }));
+      let movies = dbMovieData.map((movie) => movie.get({ plain: true }));
       // ===========take 9 random movies if we keep?
+      const shuffled = movies.sort(() => 0.5 - Math.random());
+      // console.log(shuffled);
+      movies = shuffled.slice(0, 9);
       console.log(movies);
       res.render("homepage", {
         movies,
