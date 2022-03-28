@@ -7,7 +7,8 @@
 {{#if loggedIn}}
   <div class="reviews">
     {{#each movie.comments as |comment|}}
-    <header>
+    <div class="d-flex inline justify-content-between">
+
       <p><a href="/{{comment.user.username}}">@{{comment.user.username}}</a></p>
 
       <div class="ratebox text-center">
@@ -18,7 +19,7 @@
 
       <p class="d-flex justify-content-end review-text">{{format_date comment.created_at}}</p>
   
-    </header>
+    </div>
     
     <p class="review-text p-4">{{comment.comment_text}}</p>
 
