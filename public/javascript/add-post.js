@@ -70,9 +70,12 @@ document.addEventListener("click", function (e) {
       .querySelector("#movieReviewLabel")
       .setAttribute("data-id", movie_id);
     // get the poster source
+    const posterLength =
+      e.target.parentElement.parentElement.getAttribute("style").length;
+    console.log(posterLength);
     const poster = e.target.parentElement.parentElement
       .getAttribute("style")
-      .substr(23);
+      .substr(23, posterLength - 25);
     document.querySelector("#movie-poster").setAttribute("src", poster);
 
     currentMovie = { title: title, movie_id: movie_id, poster: poster };
