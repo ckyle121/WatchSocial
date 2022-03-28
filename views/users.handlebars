@@ -1,31 +1,3 @@
-{{!-- {{#each users as |user|}}
-{{#if comments.length}}
-<section class="container w-100">
-  <h2>{{username}}</h2>
-  <div class="post-list row">
-    {{#each comments as |comment|}}
-       <div class="movie-card col-6 col-sm-3">
-  <img
-    src="{{movie.poster}}"
-    class=""
-  ></img>
-  <div class="movie-review">
-    <a>{{movie.title}}</a><hr>
-    <a>{{#times movie_rating}}
-      <i class="fas fa-star"></i>
-    {{/times}}</a>
-    <p>{{movie_rating}}/5</p>
-    <p class="card-text">{{shortened_comment comment_text}}</p>
-    <hr>
-    <a href="/movie/{{movie.id}}">Check out all reviews</a><br>
-  </div>
-</div>
-    {{/each}}
-  </div>
-</section>
-{{/if}}
-{{/each}} --}}
-
 <div class="d-flex flex-column">
   {{#each users as |user|}}
     <h2>@{{username}}</h2>

@@ -1,10 +1,12 @@
 {{#if comments.length}}
 <section class="w-100">
   <h2 class="text-center display-4">Your Review Board</h2>
+  <div class="container">
   <div class="post-list row">
     {{#each comments as |comment|}}
       {{> movie-card comment}}
     {{/each}}
+    </div>
   </div>
 </section>
 {{/if}}

@@ -20,7 +20,7 @@ router.get("/", (req, res) => {
     .then((dbMovieData) => {
       const movies = dbMovieData.map((movie) => movie.get({ plain: true }));
       // ===========take 9 random movies if we keep?
-      // console.log(movies);
+      console.log(movies);
       res.render("homepage", {
         movies,
         loggedIn: req.session.loggedIn,
