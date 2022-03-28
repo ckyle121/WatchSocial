@@ -19,7 +19,8 @@ router.get("/", (req, res) => {
   })
     .then((dbMovieData) => {
       const movies = dbMovieData.map((movie) => movie.get({ plain: true }));
-
+      // ===========take 9 random movies if we keep?
+      // console.log(movies);
       res.render("homepage", {
         movies,
         loggedIn: req.session.loggedIn,
@@ -61,7 +62,6 @@ router.get("/movie/:id", (req, res) => {
         res.status(404).json({ message: "No movie found with this id" });
         return;
       }
-
       const movie = dbMovieData.get({ plain: true });
 
       res.render("single-post", {
