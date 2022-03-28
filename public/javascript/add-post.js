@@ -56,27 +56,6 @@ document
   .querySelector(".new-post-form")
   .addEventListener("submit", newFormHandler);
 
-// Use the choose button from a movie and populate the info
-// document.addEventListener("click", function (e) {
-//   if (e.target && e.target.className == "movieChoice") {
-//     // get the title
-//     const title =
-//       e.target.parentElement.parentElement.childNodes[3].textContent;
-//     document.querySelector("#movieReviewLabel").innerText = title;
-//     // get the movie id
-//     const movie_id =
-//       e.target.parentElement.parentElement.getAttribute("data-id");
-//     document
-//       .querySelector("#movieReviewLabel")
-//       .setAttribute("data-id", movie_id);
-//     // get the poster source
-//     const poster = e.target.parentElement.parentElement.childNodes[1].src;
-//     document.querySelector("#movie-poster").setAttribute("src", poster);
-
-//     currentMovie = { title: title, movie_id: movie_id, poster: poster };
-//   }
-// });
-
 document.addEventListener("click", function (e) {
   if (e.target && e.target.className == "movieChoice") {
     console.log(e.target.parentElement.parentElement);
@@ -91,7 +70,9 @@ document.addEventListener("click", function (e) {
       .querySelector("#movieReviewLabel")
       .setAttribute("data-id", movie_id);
     // get the poster source
-    const poster = e.target.parentElement.parentElement.getAttribute("style");
+    const poster = e.target.parentElement.parentElement
+      .getAttribute("style")
+      .substr(23);
     document.querySelector("#movie-poster").setAttribute("src", poster);
 
     currentMovie = { title: title, movie_id: movie_id, poster: poster };
