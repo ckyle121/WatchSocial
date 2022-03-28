@@ -94,19 +94,21 @@ header {
   font-size: 1.75rem;
 }
 
-h1 { 
+h1 {
+  /* max-width: fit-content; */
   text-align: center;
   color: white;
   text-transform: uppercase;
-  font-family: 'Raleway', cursive;
+  font-family: "Raleway", cursive;
   font-weight: 100;
-  position: relative;
+  position: fixed;
   background: black;
   padding: 20px;
   letter-spacing: 30px;
   animation: comein 1.5s 1 ease-in-out forwards;
 }
-h1:before {
+h1:before,
+h4:before {
   content: "";
   position: absolute;
   left: 50%;
@@ -118,7 +120,8 @@ h1:before {
   background: radial-gradient(50% 50%, ellipse closest-side, #444, black);
   z-index: -1;
 }
-h1:after {
+h1:after,
+h4:after {
   content: "";
   position: absolute;
   top: -1px;
@@ -129,6 +132,19 @@ h1:after {
   background: linear-gradient(left, black, #eee, black);
 }
 
+@keyframes comein {
+  0% {
+    letter-spacing: 100px;
+    color: rgba(255, 255, 255, 0);
+  }
+  70% {
+    letter-spacing: 20px;
+  }
+  100% {
+    letter-spacing: 30px;
+    color: rgba(255, 255, 255, 1);
+  }
+}
 
 main {
   flex: 1;
