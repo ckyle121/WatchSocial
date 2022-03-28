@@ -99,13 +99,13 @@ h1 {
   color: white;
   text-transform: uppercase;
   font-family: "Raleway", cursive;
-  font-weight: 100;
   position: relative;
   background: black;
   padding: 20px;
   letter-spacing: 30px;
   animation: comein 1.5s 1 ease-in-out forwards;
 }
+
 h1:before {
   content: "";
   position: absolute;
@@ -118,6 +118,7 @@ h1:before {
   background: radial-gradient(50% 50%, ellipse closest-side, #444, black);
   z-index: -1;
 }
+
 h1:after {
   content: "";
   position: absolute;
@@ -464,4 +465,30 @@ span {
 
 .movie-card:hover .movie-overview {
   padding-bottom: 25px;
+}
+
+/* MEDIA QUERIES  */
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 36px;
+    letter-spacing: 10px;
+    animation: none;
+    overflow: hidden;
+  }
+  footer {
+    border-top: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 25px;
+    letter-spacing: 5px;
+    animation: none;
+    overflow: hidden;
+  }
+  footer {
+    border-top: none;
+  }
 }
