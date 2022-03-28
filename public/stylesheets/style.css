@@ -171,10 +171,6 @@ footer {
   width: 100%;
 }
 
-.container {
-  padding: 2px 16px;
-}
-
 .movie-card {
   max-width: 200px;
   max-height: 300px;
@@ -248,7 +244,7 @@ footer {
 /* ============================= */
 /* =========Carousel============ */
 
-.container {
+.carouselContainer {
   position: relative;
   width: 320px;
   margin: 100px auto 0 auto;
