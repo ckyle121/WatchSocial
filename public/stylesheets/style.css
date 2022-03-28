@@ -8,7 +8,7 @@ html,
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: "Overpass", sans-serif;
+  font-family: "Raleway", sans-serif;
   color: #333;
   background: -webkit-linear-gradient(
     top,
@@ -94,9 +94,41 @@ header {
   font-size: 1.75rem;
 }
 
-header h1 {
-  font-size: 1em;
+h1 { 
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Raleway', cursive;
+  font-weight: 100;
+  position: relative;
+  background: black;
+  padding: 20px;
+  letter-spacing: 30px;
+  animation: comein 1.5s 1 ease-in-out forwards;
 }
+h1:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -50px;
+  width: 600px;
+  margin-left: -300px;
+  margin-top: -220px;
+  height: 600px;
+  background: radial-gradient(50% 50%, ellipse closest-side, #444, black);
+  z-index: -1;
+}
+h1:after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  left: -1px;
+  bottom: -1px;
+  z-index: -1;
+  background: linear-gradient(left, black, #eee, black);
+}
+
 
 main {
   flex: 1;
