@@ -190,8 +190,9 @@ footer {
 
 .movie-card img {
   transition: all linear 0.25s;
-  max-width: 100%;
-  max-height: 100%;
+  width: auto;
+  height: 100%;
+  left: -15px;
 }
 
 .movie-card .movie-name {
