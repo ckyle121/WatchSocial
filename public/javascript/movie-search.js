@@ -1,4 +1,8 @@
+const tryAgain = document.querySelector("#try-again");
 function movieSearch() {
+  tryAgain.innerHTML = `<div class="spinner-border text-light" style="width: 3rem; height: 3rem;" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div></div>`;
   // imdb get request
   const requestOptions = {
     method: "GET",
@@ -27,7 +31,6 @@ function movieSearch() {
 
 function showMovies(movies) {
   const movieList = document.querySelector("#movieList");
-  const tryAgain = document.querySelector("#try-again");
   // if movielist has child elements, remove them for the next search
   while (movieList.firstChild) {
     movieList.removeChild(movieList.firstChild);
@@ -35,60 +38,32 @@ function showMovies(movies) {
   //   for loop for top 5 movies of the search
   let temp = "";
   for (let i = 0; i < 5; i++) {
-    temp += `<div class="movie-card" data-id=${movies.results[i].id}>
-    <img src="${movies.results[i].image}"></img>
-    <div class="movie-name">${movies.results[i].title}</div>
-    <div class="movie-review">${movies.results[i].description.substr(
+    //   temp += `<div class="movie-card" data-id=${movies.results[i].id}>
+    //   <img src="${movies.results[i].image}"></img>
+    //   <div class="movie-name">${movies.results[i].title}</div>
+    //   <div class="movie-review">${movies.results[i].description.substr(
+    //     0,
+    //     6
+    //   )}</div>
+    //   <div class="movie-choice"><button type="button" data-bs-toggle="modal" data-bs-target="#movieReview" class="movieChoice">Choose This One</button></div>
+    // </div>`;
+
+    temp += `<div class="userCard" data-id=${
+      movies.results[i].id
+    } style="background-image: url('${movies.results[i].image}')">
+      <h3 class="title movie-name">${
+        movies.results[i].title
+      }</h3><div class="inner-text">${movies.results[i].description.substr(
       0,
       6
     )}</div>
-    <div class="movie-choice"><button type="button" data-bs-toggle="modal" data-bs-target="#movieReview" class="movieChoice">Choose This One</button></div>
-  </div>`;
-
-    // let movie = document.createElement("div");
-    // movie.setAttribute("data-id", movies.results[i].id);
-    // movie.className = "movieListSingleEl";
-
-    // let movieImage = document.createElement("img");
-    // movieImage.setAttribute("src", movies.results[i].image);
-    // // title of movie
-    // let movieInfo = document.createElement("div");
-    // movieInfo.className = "container d-grid gap-2";
-
-    // let movieTitle = document.createElement("h4");
-    // movieTitle.textContent = movies.results[i].title;
-    // movieTitle.className = "text-center";
-
-    // let movieId = document.createElement("p");
-    // movieId.textContent = movies.results[i].description.substr(0, 6);
-    // movieId.className = "text-center";
-
-    // let chooseBtn = document.createElement("button");
-    // chooseBtn.setAttribute("type", "button");
-    // chooseBtn.setAttribute("data-bs-toggle", "modal");
-    // chooseBtn.setAttribute("data-bs-target", "#movieReview");
-    // chooseBtn.textContent = "Choose This One";
-    // chooseBtn.className = "movieChoice";
-
-    // movieInfo.appendChild(movieTitle);
-    // movieInfo.appendChild(movieId);
-    // movieInfo.appendChild(chooseBtn);
-
-    // movie.appendChild(movieImage);
-    // movie.appendChild(movieInfo);
-
-    // movieList.appendChild(temp);
+      <div class="bottom-button"><button type="button" data-bs-toggle="modal" data-bs-target="#movieReview" class="movieChoice">Choose This One</button></div>
+    </div>`;
   }
 
   movieList.innerHTML = temp;
 
-  if (!tryAgain.firstChild) {
-    let tryAgainEl = document.createElement("a");
-    tryAgainEl.setAttribute("href", "/dashboard");
-    tryAgainEl.textContent =
-      "Didn't see what you were looking for? Try to get more specific. We aren't mind readers.";
-    tryAgain.appendChild(tryAgainEl);
-  }
+  tryAgain.innerHTML = `<a href="/dashboard">Didn't see what you were looking for? Try to get more specific. We aren't mind readers.</a>`;
 }
 
 document.querySelector("#searchMovie").addEventListener("click", movieSearch);

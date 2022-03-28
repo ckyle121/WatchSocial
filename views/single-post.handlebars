@@ -2,12 +2,12 @@
   class="jumbotron"
   style="background: url({{movie.poster}}) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"
 >
-  <div class="container">
+  <div class="">
     <h1 class="text-decoration-underline">{{movie.title}}</h1>
   </div>
 </div>
 
-<div class="container">
+{{!-- <div class="container">
   {{#if loggedIn}}
     <ol>
       {{#each movie.comments as |comment|}}
@@ -25,4 +25,32 @@
       {{/each}}
     </ol>
   {{/if}}
-</div>
+</div> --}}
+{{#if loggedIn}}
+  <div class="reviews">
+    {{#each movie.comments as |comment|}}
+      <div class="row blockquote review-item rounded">
+        <div class="col-md-3 text-center">
+          <img
+            class="rounded-circle reviewer"
+            src="http://standaloneinstaller.com/upload/avatar.png"
+          />
+          <div class="caption">
+            <small>by <a href="#joe">@{{comment.user.username}}</a></small>
+          </div>
+
+        </div>
+        <div class="col-md-9">
+          <div class="ratebox text-center" data-id="0" data-rating="5">{{#times
+              comment.movie_rating
+            }}
+              <i class="rating__star fas fa-star"></i>
+            {{/times}}</div>
+          <p class="review-text">{{comment.comment_text}}</p>
+
+          <small class="review-date">{{format_date comment.created_at}}</small>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+{{/if}}

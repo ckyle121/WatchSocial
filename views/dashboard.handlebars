@@ -1,23 +1,27 @@
-<section class="p-3">
+<section class="p-3 text-center">
   <h2>&#8595 Search for a new movie to review right here &#8595</h2>
 
-  <section class="m-3">
-    <label for="movie-search">Search for a Movie:</label>
-    <input type="text" id="movie-search" name="movie-search">
-    <button id="searchMovie">Search</button>
-    <div id="movielist"></div>
-    <div id="try-again"></div>
+  <section class="m-3 text-center">
+    <div class="mb-3">
+      <label for="movie-search">Search for a Movie:</label>
+      <input type="text" id="movie-search" name="movie-search">
+      <button id="searchMovie">Search</button>
+    </div>
+    <div class="userCardContainer w-100" id="movielist">
+      <h3 class="text-center w-100">&#8593 Search for a new movie to review right here &#8593</h3>
+    </div>
+    <div id="try-again">
   </section>
 </section>
 
 {{#if comments.length}}
-<section class="">
-  <h2 class="">Your Reviews</h2>
-  <ol class="post-list d-flex">
+<section class="w-100">
+  <h2 class="">Your Review Board</h2>
+  <div class="post-list row">
     {{#each comments as |comment|}}
       {{> movie-card comment}}
     {{/each}}
-  </ol>
+  </div>
 </section>
 {{/if}}
 
@@ -40,20 +44,19 @@
         ></button>
       </div>
       <div class="modal-body">
- <form class="new-post-form">
+ <form class="new-post-form d-flex flex-column justify-content-around align-items-center p-3">
     <div>
-      {{!-- <h8></h8> --}}
-      <img id="movie-poster" src="https://images.unsplash.com/photo-1579642761360-eabd1cca1e81?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="">
-    </div>
-    <div class="rating" name="rating">
+      <img id="movie-poster" src="" alt=""/>
+          <div class="rating" name="rating">
          <i class="rating__star far fa-star"></i>
          <i class="rating__star far fa-star"></i>
          <i class="rating__star far fa-star"></i>
          <i class="rating__star far fa-star"></i>
          <i class="rating__star far fa-star"></i>
     </div>
+    </div>
     <div>
-      <textarea id="post-text" name="post-text"></textarea>
+      <textarea class="w-100" id="post-text" name="post-text"></textarea>
     </div>
     <button type="submit" class="button">Review This Movie!!!</button>
   </form>
