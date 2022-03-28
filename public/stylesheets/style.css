@@ -435,8 +435,9 @@ span {
   padding: 15px;
   max-width: 768px;
   margin: 0 auto;
-  background-color: #834556;
+  background-color: black;
   color: #ffe23d;
+  border-radius: 10px;
 }
 
 /* =============================== */
