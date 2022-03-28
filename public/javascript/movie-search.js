@@ -1,4 +1,8 @@
+const tryAgain = document.querySelector("#try-again");
 function movieSearch() {
+  tryAgain.innerHTML = `<div class="spinner-border text-light" style="width: 3rem; height: 3rem;" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div></div>`;
   // imdb get request
   const requestOptions = {
     method: "GET",
@@ -27,7 +31,6 @@ function movieSearch() {
 
 function showMovies(movies) {
   const movieList = document.querySelector("#movieList");
-  const tryAgain = document.querySelector("#try-again");
   // if movielist has child elements, remove them for the next search
   while (movieList.firstChild) {
     movieList.removeChild(movieList.firstChild);
@@ -60,13 +63,7 @@ function showMovies(movies) {
 
   movieList.innerHTML = temp;
 
-  if (!tryAgain.firstChild) {
-    let tryAgainEl = document.createElement("a");
-    tryAgainEl.setAttribute("href", "/dashboard");
-    tryAgainEl.textContent =
-      "Didn't see what you were looking for? Try to get more specific. We aren't mind readers.";
-    tryAgain.appendChild(tryAgainEl);
-  }
+  tryAgain.innerHTML = `<a href="/dashboard">Didn't see what you were looking for? Try to get more specific. We aren't mind readers.</a>`;
 }
 
 document.querySelector("#searchMovie").addEventListener("click", movieSearch);
