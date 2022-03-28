@@ -1,4 +1,4 @@
-<section class="p-3 text-center">
+{{!-- <section class="p-3 text-center">
   <h2>&#8595 Search here to Review a Movie &#8595</h2>
 
   <section class="m-3 text-center">
@@ -11,11 +11,11 @@
     </div>
     <div id="try-again">
   </section>
-</section>
+</section> --}}
 
 {{#if comments.length}}
 <section class="w-100">
-  <h2 class="">Your Review Board</h2>
+  <h2 class="text-center display-4">Your Review Board</h2>
   <div class="post-list row">
     {{#each comments as |comment|}}
       {{> movie-card comment}}
@@ -68,5 +68,4 @@
 </div>
 
 <script src="/javascript/add-post.js"></script>
-<script src="/javascript/movie-search.js"></script>
 <script src="/javascript/rating.js"></script>
