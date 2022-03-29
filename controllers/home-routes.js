@@ -70,9 +70,6 @@ router.get("/movie/:id", (req, res) => {
 
 router.get("/reviews", (req, res) => {
   Comment.findAll({
-    where: {
-      user_id: req.session.user_id,
-    },
     attributes: [
       "id",
       "comment_text",
