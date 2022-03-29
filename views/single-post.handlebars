@@ -5,8 +5,10 @@
 </div>
 
 {{#if loggedIn}}
-  <div class="reviews">
+  
+    
     {{#each movie.comments as |comment|}}
+    <div class="reviews mt-3">
     <div class="d-flex inline justify-content-between">
 
       <p><a href="/users/{{comment.user.username}}">@{{comment.user.username}}</a></p>
@@ -22,7 +24,8 @@
     </div>
     
     <p class="review-text p-4">{{comment.comment_text}}</p>
+</div>
 
-    {{/each}}
-  </div>
+    {{/each}} 
+  
 {{/if}}
