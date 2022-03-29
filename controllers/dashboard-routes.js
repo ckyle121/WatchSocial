@@ -1,5 +1,4 @@
 const router = require("express").Router();
-// const sequelize = require("../config/connection");
 const { Movie, User, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
@@ -26,6 +25,7 @@ router.get("/", withAuth, (req, res) => {
         attributes: ["username"],
       },
     ],
+    order: [["createdAt", "DESC"]],
   })
     .then((dbCommentData) => {
       const comments = dbCommentData.map((post) => post.get({ plain: true }));

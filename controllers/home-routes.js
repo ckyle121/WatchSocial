@@ -1,5 +1,4 @@
 const router = require("express").Router();
-// const sequelize = require("../config/connection");
 const { Movie, User, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
@@ -10,11 +9,8 @@ router.get("/", (req, res) => {
   })
     .then((dbMovieData) => {
       let movies = dbMovieData.map((movie) => movie.get({ plain: true }));
-      // ===========take 9 random movies if we keep?
       const shuffled = movies.sort(() => 0.5 - Math.random());
-      // console.log(shuffled);
       movies = shuffled.slice(0, 9);
-      console.log(movies);
       res.render("homepage", {
         movies,
         loggedIn: req.session.loggedIn,
@@ -71,9 +67,6 @@ router.get("/movie/:id", withAuth, (req, res) => {
 
 router.get("/reviews", withAuth, (req, res) => {
   Comment.findAll({
-    where: {
-      user_id: req.session.user_id,
-    },
     attributes: [
       "id",
       "comment_text",
@@ -136,8 +129,6 @@ router.get("/users/:username", withAuth, (req, res) => {
         return;
       }
       const user = dbUserData.get({ plain: true });
-      console.log(user);
-
       res.render("user-page", {
         user,
         loggedIn: req.session.loggedIn,

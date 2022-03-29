@@ -58,7 +58,6 @@ document
 
 document.addEventListener("click", function (e) {
   if (e.target && e.target.className == "movieChoice") {
-    console.log(e.target.parentElement.parentElement);
     // get the title
     const title =
       e.target.parentElement.parentElement.childNodes[1].textContent;
@@ -72,13 +71,11 @@ document.addEventListener("click", function (e) {
     // get the poster source
     const posterLength =
       e.target.parentElement.parentElement.getAttribute("style").length;
-    console.log(posterLength);
     const poster = e.target.parentElement.parentElement
       .getAttribute("style")
       .substr(23, posterLength - 25);
     document.querySelector("#movie-poster").setAttribute("src", poster);
 
     currentMovie = { title: title, movie_id: movie_id, poster: poster };
-    console.log(currentMovie);
   }
 });
