@@ -1,8 +1,6 @@
 const myModal = document.getElementById("myModal");
 const myInput = document.getElementById("myInput");
 
-
-
 async function loginFormHandler(event) {
   event.preventDefault();
 
@@ -34,7 +32,6 @@ async function signupFormHandler(event) {
   const email = document.querySelector("#email-signup").value.trim();
   const password = document.querySelector("#password-signup").value.trim();
 
-
   if (username && email && password) {
     const response = await fetch("/api/users", {
       method: "POST",
@@ -49,13 +46,12 @@ async function signupFormHandler(event) {
     if (response.ok) {
       document.location.replace("/dashboard/");
     } else {
-      alert('This username is already taken');
+      alert("This username is already taken");
     }
   }
 }
 
-console.log('listening');
-
+console.log("listening");
 
 document
   .querySelector(".login-form")

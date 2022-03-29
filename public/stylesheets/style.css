@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
-
+/* ========Everything=========== */
 * {
   box-sizing: border-box;
 }
@@ -22,6 +21,42 @@ html,
   overflow-x: hidden;
 }
 
+main {
+  flex: 1;
+  padding: 2% 4%;
+}
+
+header {
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1%;
+  font-size: 1.75rem;
+}
+
+footer {
+  border-top: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  padding: 1%;
+  font-size: 110%;
+}
+
+/* =========================== */
+
+/* ========Basics============= */
+
+h8,
+h6,
+h3,
+h4,
+h2,
+h5,
+.yellow {
+  color: #ffe23d;
+}
+
 a {
   text-decoration: none;
   color: #ffe23d;
@@ -30,7 +65,7 @@ a {
 }
 
 a:hover {
-  color: #f7d200;
+  color: #834556;
 }
 
 button {
@@ -45,12 +80,6 @@ button {
 }
 */ button:hover {
   background-color: #683341;
-}
-
-.post-list {
-  margin: 0.25rem;
-  padding: 0;
-  list-style: none;
 }
 
 textarea,
@@ -82,6 +111,14 @@ form label {
   display: block;
 }
 
+/* =========================== */
+
+.post-list {
+  margin: 0.25rem;
+  padding: 0;
+  list-style: none;
+}
+
 .wrapper {
   width: 100%;
   min-height: 100%;
@@ -91,14 +128,7 @@ form label {
   flex-direction: column;
 }
 
-header {
-  border-bottom: 1px solid #ccc;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1%;
-  font-size: 1.75rem;
-}
+/* ========Home Page Banner====== */
 
 h1 {
   text-align: center;
@@ -150,10 +180,23 @@ h1:after {
   }
 }
 
-main {
-  flex: 1;
-  padding: 2% 4%;
+/* =========================== */
+
+/* ========Modals========= */
+
+.modal-text-style {
+  font-weight: bold;
+  color: black;
 }
+
+.modal-text-bold {
+  font-weight: bold;
+  color: #ffe23d;
+}
+
+/* =========================== */
+
+/* ====Posts/Comments/Ratings==== */
 
 .delete-post-btn {
   background-color: #d41414;
@@ -170,24 +213,14 @@ main {
   color: #7d7d7d;
 }
 
-h8,
-h6,
-h3,
-h4,
-h2,
-h5,
-.yellow {
-  color: #ffe23d;
-}
-
-.modal-text-style{
+.modal-text-style {
   font-weight: bold;
   color: black;
 }
 
 .modal-text-bold {
   font-weight: bold;
-  color:#ffe23d
+  color: #ffe23d;
 }
 
 .comment {
@@ -203,14 +236,6 @@ h5,
 
 .new-post-form input {
   width: 300px;
-}
-
-footer {
-  border-top: 1px solid #ccc;
-  display: flex;
-  justify-content: center;
-  padding: 1%;
-  font-size: 110%;
 }
 
 #movielist {
@@ -276,7 +301,7 @@ footer {
   display: flex;
 }
 
-span {
+#try-again span {
   margin: auto;
   font-size: 2rem;
 }
@@ -320,7 +345,7 @@ span {
 
 /* =========================== */
 
-/* ========Movie Cards============ */
+/* ========Search Movie Cards============ */
 
 .UserCardContainer {
   /* position: absolute; */
@@ -403,6 +428,8 @@ span {
 
 /* =============================== */
 
+/* =========Posted Movie Cards======== */
+
 .movie-card {
   max-width: 300px;
   max-height: 400px;
@@ -464,12 +491,12 @@ span {
   font-weight: bold;
 }
 
-.movie-card .movie-overview p {
+/* .movie-card .movie-overview p {
   color: rgba(255, 255, 255, 0.7);
-}
+} */
 
 .movie-card:hover img {
-  filter: brightness(80%);
+  filter: brightness(30%);
 }
 
 .movie-card:hover .movie-title {
@@ -484,6 +511,8 @@ span {
 .movie-card:hover .movie-overview {
   padding-bottom: 25px;
 }
+
+/* =============================== */
 
 /* MEDIA QUERIES  */
 
@@ -506,31 +535,7 @@ span {
     animation: none;
     overflow: hidden;
   }
-  .carouselContainer {
-    position: relative;
-    width: 320px;
-    margin: 100px auto 0 auto;
-    perspective: 1000px;
-  }
 
-  .carousel {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    animation: rotate360 60s infinite forwards linear;
-  }
-  .carousel__face {
-    position: absolute;
-    width: 300px;
-    height: 187px;
-    top: 20px;
-    left: 10px;
-    right: 10px;
-    background-size: cover;
-    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
-    display: flex;
-  }
   footer {
     border-top: none;
   }
