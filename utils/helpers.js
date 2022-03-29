@@ -2,7 +2,7 @@ const date = require('date-and-time');
 
 module.exports = {
   format_date: (now) => {
-    return date.format(now, 'MM/DD/YYYY');
+    return date.format(now, 'DD MMMM YYYY');
   },
   format_plural: (word, amount) => {
     if (amount !== 1) {
