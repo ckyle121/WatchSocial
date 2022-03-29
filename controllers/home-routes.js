@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const sequelize = require("../config/connection");
+// const sequelize = require("../config/connection");
 const { Movie, User, Comment } = require("../models");
 
 // get all posts for homepage
@@ -78,9 +78,9 @@ router.get("/movie/:id", (req, res) => {
     });
 });
 
-router.get("/users", (req, res) => {
-  User.findAll({
-    attributes: ["username"],
+router.get("/reviews", (req, res) => {
+  Movie.findAll({
+    attributes: ["id", "title", "poster"],
     include: [
       {
         model: Comment,
@@ -88,23 +88,22 @@ router.get("/users", (req, res) => {
           "id",
           "comment_text",
           "movie_id",
-          "user_id",
           "movie_rating",
+          "user_id",
           "created_at",
         ],
-        order: ["created_at"],
         include: {
-          model: Movie,
-          attributes: ["title", "poster"],
+          model: User,
+          attributes: ["username"],
         },
       },
     ],
   })
-    .then((dbUserData) => {
-      const users = dbUserData.map((user) => user.get({ plain: true }));
-      console.log(users);
-      res.render("users", {
-        users,
+    .then((dbMovieData) => {
+      const movies = dbMovieData.map((user) => user.get({ plain: true }));
+      console.log(movies);
+      res.render("reviews", {
+        movies,
         loggedIn: req.session.loggedIn,
       });
     })

@@ -50,6 +50,7 @@ async function signupFormHandler(event) {
     if (response.ok) {
       document.location.replace("/dashboard/");
     } else {
+      console.log(response);
       alert(response.statusText);
     }
   }

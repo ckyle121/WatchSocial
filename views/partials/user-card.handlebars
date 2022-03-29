@@ -1,0 +1,18 @@
+{{log comments}}
+<div class="col-md-4">
+  <div class="movie-card"><img src="{{poster}}" class="img img-responsive" />
+    <div class="movie-title">{{user.movie_rating}}</div>
+    <div class="movie-position"><a>{{#times comments.movie_rating}}
+          <i class="fas fa-star"></i>
+        {{/times}}</a></div>
+    <div class="movie-overview">
+      <div class="movie-overview">
+        <div class="row text-center">
+          <div class="col-xs-4">
+            <h3><a href="/movie/{{id}}">See More Reviews</a></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
