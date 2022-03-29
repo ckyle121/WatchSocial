@@ -17,6 +17,7 @@ html,
   );
   background-repeat: no-repeat;
   background-attachment: fixed;
+  overflow-x: hidden;
 }
 
 a {
@@ -178,7 +179,6 @@ h2,
   font-weight: bold;
   color: black;
 }
-
 .comment {
   padding: 1%;
   margin-bottom: 1%;

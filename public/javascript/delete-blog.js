@@ -5,6 +5,7 @@ async function deleteFormHandler(event) {
     window.location.toString().split("/").length - 1
   ];
   const response = await fetch(`/api/comments/${id}`, {
+    
     method: "DELETE",
   });
 
