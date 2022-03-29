@@ -20,7 +20,6 @@ function movieSearch() {
     )
       .then((response) => response.json())
       .then((result) => {
-        console.log(result);
         showMovies(result);
       })
       .catch((error) => console.log("error", error));
@@ -35,7 +34,7 @@ function showMovies(movies) {
   while (movieList.firstChild) {
     movieList.removeChild(movieList.firstChild);
   }
-  //   for loop for top 5 movies of the search
+  //  for loop for top 5 movies of the search
   let temp = "";
   for (let i = 0; i < 5; i++) {
     temp += `<div class="userCard" data-id=${

@@ -4,7 +4,6 @@ const withAuth = require("../../utils/auth");
 
 // get all users
 router.get("/", (req, res) => {
-  console.log("======================");
   Movie.findAll({
     attributes: ["id", "title", "poster"],
     include: [
@@ -100,7 +99,6 @@ router.put("/:id", withAuth, (req, res) => {
 });
 
 router.delete("/:id", withAuth, (req, res) => {
-  console.log("id", req.params.id);
   Movie.destroy({
     where: {
       id: req.params.id,
