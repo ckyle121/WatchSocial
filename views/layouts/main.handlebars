@@ -25,32 +25,30 @@
 
   <body>
     <div class="wrapper">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container-fluid">
-          <div>
-            <a class="navbar-brand" href="/">WatchSocial</a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNavAltMarkup"
-              aria-controls="navbarNavAltMarkup"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav">
-                {{#if loggedIn}}
-                  <a class="nav-link" href="/dashboard">My Dashboard</a>
-                  <a class="nav-link" href="/movie-search">Search</a>
-                  <a class="nav-link" href="/users">Other Reviewers</a>
-                  <a id="logout" class="nav-link" href="/">Log Out</a>
-                {{else}}
-                  <a href="/login" class="nav-link">Log In</a>
-                {{/if}}
-              </div>
+          <a class="navbar-brand" href="/">Watch Social</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              {{#if loggedIn}}
+                <a class="nav-link" href="/dashboard">My Dashboard</a>
+                <a class="nav-link" href="/movie-search">Search</a>
+                <a class="nav-link" href="/users">Other Reviewers</a>
+                <a id="logout" class="nav-link" href="/">Log Out</a>
+              {{else}}
+                <a href="/login" class="nav-link">Log In</a>
+              {{/if}}
             </div>
           </div>
         </div>
