@@ -17,6 +17,7 @@ html,
   );
   background-repeat: no-repeat;
   background-attachment: fixed;
+  overflow-x: hidden;
 }
 
 a {
