@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { Movie, User, Comment } = require("../models");
+const withAuth = require("../utils/auth");
 
 // get all posts for homepage
 router.get("/", (req, res) => {
@@ -22,7 +23,7 @@ router.get("/", (req, res) => {
 });
 
 // get single post
-router.get("/movie/:id", (req, res) => {
+router.get("/movie/:id", withAuth, (req, res) => {
   Movie.findOne({
     where: {
       id: req.params.id,
@@ -64,7 +65,7 @@ router.get("/movie/:id", (req, res) => {
     });
 });
 
-router.get("/reviews", (req, res) => {
+router.get("/reviews", withAuth, (req, res) => {
   Comment.findAll({
     attributes: [
       "id",
@@ -97,7 +98,7 @@ router.get("/reviews", (req, res) => {
 });
 
 // get single user
-router.get("/users/:username", (req, res) => {
+router.get("/users/:username", withAuth, (req, res) => {
   User.findOne({
     where: {
       username: req.params.username,
