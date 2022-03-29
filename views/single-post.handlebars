@@ -9,7 +9,7 @@
     {{#each movie.comments as |comment|}}
     <div class="d-flex inline justify-content-between">
 
-      <p><a href="/{{comment.user.username}}">@{{comment.user.username}}</a></p>
+      <p><a href="/users/{{comment.user.username}}">@{{comment.user.username}}</a></p>
 
       <div class="ratebox text-center">
       {{#times comment.movie_rating}}
