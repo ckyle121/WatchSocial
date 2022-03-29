@@ -115,10 +115,10 @@ router.get("/users", (req, res) => {
 });
 
 // get single user
-router.get("/users/:id", (req, res) => {
+router.get("/users/:username", (req, res) => {
   User.findOne({
     where: {
-       id: req.params.id,
+       username: req.params.username,
     },
     attributes: ["username"],
     include: [
@@ -140,18 +140,23 @@ router.get("/users/:id", (req, res) => {
       },
     ],
   })
-    .then((dbUserData) => {
-      const users = dbUserData.map((user) => user.get({ plain: true }));
-      console.log(users);
-      res.render("users", {
-        users,
-        loggedIn: req.session.loggedIn,
-      });
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
+  .then((dbUserData) => {
+    if (!dbUserData) {
+      res.status(404).json({ message: "No user found with this id" });
+      return;
+    }
+    const user = dbUserData.get({ plain: true });
+    console.log(user);
+
+    res.render("user-page", {
+      user,
+      loggedIn: req.session.loggedIn,
     });
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
 router.get("/login", (req, res) => {

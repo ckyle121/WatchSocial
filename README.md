@@ -23,6 +23,7 @@ The app follows the Model-View-Controller (MVC) paradigm in its architectural st
 * Handlebars
 * Heroku 
 * Date-and-Time (npm package for working with dates)
+* Nodemailer (npm package to send emails)
 
 ## Homepage
 

@@ -1,6 +1,6 @@
 <div class="d-flex flex-column">
   {{#each users as |user|}}
-    <h2>@{{username}}</h2>
+    <h2><a href="/users/{{username}}">@{{username}}</a></h2>
     {{#if comments.length}}
       <div class="userCardContainer w-100">
         {{#each comments as |comment|}}
@@ -13,10 +13,6 @@
               <a>{{#times movie_rating}}
                   <i class="fas fa-star"></i>
                 {{/times}}</a>
-              
-              {{!-- <p>{{movie_rating}}/5</p> --}}
-              {{!-- <hr /> --}}
-              {{!-- <p class="">{{shortened_comment comment_text}}</p> --}}
               <br/>
               <br/>
               <br/>
