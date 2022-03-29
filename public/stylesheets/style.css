@@ -212,6 +212,26 @@ h1:after {
   color: #7d7d7d;
 }
 
+h8,
+h6,
+h3,
+h4,
+h2,
+h5,
+.yellow {
+  color: #ffe23d;
+}
+
+.modal-text-style {
+  font-weight: bold;
+  color: black;
+}
+
+.modal-text-bold {
+  font-weight: bold;
+  color: #ffe23d;
+}
+
 .comment {
   padding: 1%;
   margin-bottom: 1%;
