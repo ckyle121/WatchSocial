@@ -1,8 +1,9 @@
 <section class="w-100">
   <div class="container">
   <div class="post-list row">
-{{#each movies as |movie|}}
-      {{> user-card movie}}
+{{#each comments as |comment|}}
+{{!-- {{log movie}} --}}
+      {{> user-card comment}}
   {{/each}}
     </div>
   </div>

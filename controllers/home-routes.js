@@ -5,17 +5,7 @@ const { Movie, User, Comment } = require("../models");
 // get all posts for homepage
 router.get("/", (req, res) => {
   Movie.findAll({
-    attributes: ["id", "title", "poster"],
-    include: [
-      {
-        model: Comment,
-        attributes: ["id", "comment_text", "movie_id", "user_id", "created_at"],
-        include: {
-          model: User,
-          attributes: ["username"],
-        },
-      },
-    ],
+    attributes: ["poster"],
   })
     .then((dbMovieData) => {
       let movies = dbMovieData.map((movie) => movie.get({ plain: true }));
@@ -79,33 +69,33 @@ router.get("/movie/:id", (req, res) => {
 });
 
 router.get("/reviews", (req, res) => {
-  Movie.findAll({
-    attributes: ["id", "title", "poster"],
+  Comment.findAll({
+    where: {
+      user_id: req.session.user_id,
+    },
+    attributes: [
+      "id",
+      "comment_text",
+      "movie_id",
+      "movie_rating",
+      "created_at",
+    ],
     include: [
       {
-        model: Comment,
-        attributes: [
-          "id",
-          "comment_text",
-          "movie_id",
-          "movie_rating",
-          "user_id",
-          "created_at",
-        ],
-        include: {
-          model: User,
-          attributes: ["username"],
-        },
+        model: Movie,
+        attributes: ["id", "title", "poster"],
+      },
+      {
+        model: User,
+        attributes: ["username"],
       },
     ],
+    order: [["createdAt", "DESC"]],
   })
-    .then((dbMovieData) => {
-      const movies = dbMovieData.map((user) => user.get({ plain: true }));
-      console.log(movies);
-      res.render("reviews", {
-        movies,
-        loggedIn: req.session.loggedIn,
-      });
+    .then((dbCommentData) => {
+      const comments = dbCommentData.map((post) => post.get({ plain: true }));
+
+      res.render("reviews", { comments, loggedIn: true });
     })
     .catch((err) => {
       console.log(err);
@@ -117,7 +107,7 @@ router.get("/reviews", (req, res) => {
 router.get("/users/:username", (req, res) => {
   User.findOne({
     where: {
-       username: req.params.username,
+      username: req.params.username,
     },
     attributes: ["username"],
     include: [
@@ -139,23 +129,23 @@ router.get("/users/:username", (req, res) => {
       },
     ],
   })
-  .then((dbUserData) => {
-    if (!dbUserData) {
-      res.status(404).json({ message: "No user found with this id" });
-      return;
-    }
-    const user = dbUserData.get({ plain: true });
-    console.log(user);
+    .then((dbUserData) => {
+      if (!dbUserData) {
+        res.status(404).json({ message: "No user found with this id" });
+        return;
+      }
+      const user = dbUserData.get({ plain: true });
+      console.log(user);
 
-    res.render("user-page", {
-      user,
-      loggedIn: req.session.loggedIn,
+      res.render("user-page", {
+        user,
+        loggedIn: req.session.loggedIn,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
     });
-  })
-  .catch((err) => {
-    console.log(err);
-    res.status(500).json(err);
-  });
 });
 
 router.get("/login", (req, res) => {

@@ -52,6 +52,7 @@ h6,
 h3,
 h4,
 h2,
+h5,
 .yellow {
   color: #ffe23d;
 }
@@ -64,7 +65,7 @@ a {
 }
 
 a:hover {
-  color: #f7d200;
+  color: #834556;
 }
 
 button {
@@ -210,16 +211,6 @@ h1:after {
   font-style: italic;
   font-size: 90%;
   color: #7d7d7d;
-}
-
-h8,
-h6,
-h3,
-h4,
-h2,
-h5,
-.yellow {
-  color: #ffe23d;
 }
 
 .modal-text-style {
@@ -505,7 +496,7 @@ h5,
 } */
 
 .movie-card:hover img {
-  filter: brightness(80%);
+  filter: brightness(30%);
 }
 
 .movie-card:hover .movie-title {
