@@ -179,6 +179,12 @@ h2,
   font-weight: bold;
   color: black;
 }
+
+.modal-text-bold {
+  font-weight: bold;
+  color:#ffe23d
+}
+
 .comment {
   padding: 1%;
   margin-bottom: 1%;
