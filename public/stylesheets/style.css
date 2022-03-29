@@ -1,3 +1,4 @@
+/* ========Everything=========== */
 * {
   box-sizing: border-box;
 }
@@ -18,6 +19,41 @@ html,
   background-repeat: no-repeat;
   background-attachment: fixed;
   overflow-x: hidden;
+}
+
+main {
+  flex: 1;
+  padding: 2% 4%;
+}
+
+header {
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1%;
+  font-size: 1.75rem;
+}
+
+footer {
+  border-top: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  padding: 1%;
+  font-size: 110%;
+}
+
+/* =========================== */
+
+/* ========Basics============= */
+
+h8,
+h6,
+h3,
+h4,
+h2,
+.yellow {
+  color: #ffe23d;
 }
 
 a {
@@ -43,12 +79,6 @@ button {
 }
 */ button:hover {
   background-color: #683341;
-}
-
-.post-list {
-  margin: 0.25rem;
-  padding: 0;
-  list-style: none;
 }
 
 textarea,
@@ -80,6 +110,14 @@ form label {
   display: block;
 }
 
+/* =========================== */
+
+.post-list {
+  margin: 0.25rem;
+  padding: 0;
+  list-style: none;
+}
+
 .wrapper {
   width: 100%;
   min-height: 100%;
@@ -89,14 +127,7 @@ form label {
   flex-direction: column;
 }
 
-header {
-  border-bottom: 1px solid #ccc;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1%;
-  font-size: 1.75rem;
-}
+/* ========Home Page Banner====== */
 
 h1 {
   text-align: center;
@@ -148,10 +179,23 @@ h1:after {
   }
 }
 
-main {
-  flex: 1;
-  padding: 2% 4%;
+/* =========================== */
+
+/* ========Modals========= */
+
+.modal-text-style {
+  font-weight: bold;
+  color: black;
 }
+
+.modal-text-bold {
+  font-weight: bold;
+  color: #ffe23d;
+}
+
+/* =========================== */
+
+/* ====Posts/Comments/Ratings==== */
 
 .delete-post-btn {
   background-color: #d41414;
@@ -168,25 +212,6 @@ main {
   color: #7d7d7d;
 }
 
-h8,
-h6,
-h3,
-h4,
-h2,
-.yellow {
-  color: #ffe23d;
-}
-
-.modal-text-style{
-  font-weight: bold;
-  color: black;
-}
-
-.modal-text-bold {
-  font-weight: bold;
-  color:#ffe23d
-}
-
 .comment {
   padding: 1%;
   margin-bottom: 1%;
@@ -200,14 +225,6 @@ h2,
 
 .new-post-form input {
   width: 300px;
-}
-
-footer {
-  border-top: 1px solid #ccc;
-  display: flex;
-  justify-content: center;
-  padding: 1%;
-  font-size: 110%;
 }
 
 #movielist {
@@ -273,7 +290,7 @@ footer {
   display: flex;
 }
 
-span {
+#try-again span {
   margin: auto;
   font-size: 2rem;
 }
@@ -317,7 +334,7 @@ span {
 
 /* =========================== */
 
-/* ========Movie Cards============ */
+/* ========Search Movie Cards============ */
 
 .UserCardContainer {
   /* position: absolute; */
@@ -399,6 +416,8 @@ span {
 }
 
 /* =============================== */
+
+/* =========Posted Movie Cards======== */
 
 .movie-card {
   max-width: 300px;
@@ -482,6 +501,8 @@ span {
   padding-bottom: 25px;
 }
 
+/* =============================== */
+
 /* MEDIA QUERIES  */
 
 @media screen and (max-width: 768px) {
@@ -503,7 +524,7 @@ span {
     animation: none;
     overflow: hidden;
   }
-  .carouselContainer {
+  /* .carouselContainer {
     position: relative;
     width: 320px;
     margin: 100px auto 0 auto;
@@ -527,7 +548,7 @@ span {
     background-size: cover;
     box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
     display: flex;
-  }
+  } */
   footer {
     border-top: none;
   }
