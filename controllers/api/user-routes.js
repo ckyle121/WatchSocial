@@ -1,5 +1,7 @@
 const router = require("express").Router();
 const { User, Movie, Comment } = require("../../models");
+require("dotenv").config();
+const nodemailer = require("nodemailer");
 
 // get all users
 router.get("/", (req, res) => {
@@ -64,6 +66,29 @@ router.post("/", (req, res) => {
         req.session.user_id = dbUserData.id;
         req.session.username = dbUserData.username;
         req.session.loggedIn = true;
+
+        let transporter = nodemailer.createTransport({
+          service: "gmail",
+          auth: {
+            user: process.env.EMAIL,
+            pass: process.env.PASS,
+          },
+        });
+
+        let mailOptions = {
+          from: process.env.EMAIL,
+          to: dbUserData.email,
+          subject: "Hello, Friend!",
+          text: "Welcome to WatchSocial! Your new favorite social media experience for sharing your opinions on all films new and old alike.",
+        };
+
+        transporter.sendMail(mailOptions, function (err, data) {
+          if (err) {
+            console.log("Error occured", err);
+          } else {
+            console.log("Email Sent");
+          }
+        });
 
         res.json(dbUserData);
       });
@@ -150,5 +175,7 @@ router.delete("/:id", (req, res) => {
       res.status(500).json(err);
     });
 });
+
+router.get("/id");
 
 module.exports = router;
