@@ -46,7 +46,10 @@ async function signupFormHandler(event) {
     if (response.ok) {
       document.location.replace("/dashboard");
     } else {
-      alert("This username is already taken");
+      response.json().then((result) => {
+        console.log(result);
+        alert(result.errors[0].message);
+      });
     }
   }
 }
