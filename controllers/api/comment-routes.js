@@ -11,6 +11,23 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/user-comments", (req, res) => {
+  Comment.findAll({
+    where: {
+      user_id: req.session.user_id,
+    },
+    attributes: ["movie_id"],
+  })
+    .then((dbCommentData) => {
+      const comments = dbCommentData.map((post) => post.get({ plain: true }));
+      res.json(comments);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 router.post("/", withAuth, (req, res) => {
   Comment.create({
     comment_text: req.body.comment_text,
