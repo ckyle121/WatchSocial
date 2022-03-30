@@ -18,5 +18,6 @@ Comment.belongsTo(Movie, {
   foreignKey: "movie_id",
 });
 
-module.exports = { User, Comment, Movie };
+Movie.hasOne(Comment);
 
+module.exports = { User, Comment, Movie };

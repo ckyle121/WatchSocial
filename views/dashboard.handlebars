@@ -1,6 +1,6 @@
-{{#if comments.length}}
 <section class="w-100">
-  <h2 class="text-center display-4">Your Review Board</h2>
+<h2 class="text-center display-4">Your Review Board</h2>
+{{#if comments.length}}
   <div class="container">
   <div class="post-list row">
     {{#each comments as |comment|}}
@@ -9,5 +9,11 @@
     </div>
   </div>
 </section>
+{{else}}
+<div class="text-center w-100">
+<h3>You Haven't Reviewed Anything Yet</h3>
+<h4>hit search below to get started</h4>
+<button onclick="location.href='/movie-search'" type="button">Click Here to Search</button>
+</div>
 {{/if}}
 
