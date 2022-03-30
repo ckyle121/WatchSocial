@@ -47,7 +47,6 @@ async function signupFormHandler(event) {
       document.location.replace("/dashboard");
     } else {
       response.json().then((result) => {
-        console.log(result);
         alert(result.errors[0].message);
       });
     }
