@@ -1,4 +1,33 @@
 const movieList = document.querySelector("#movielist");
+const averageRatingBox = document.querySelector(".average-rate");
+
+function getAverage() {
+  const averageRatingToHalf =
+    Math.round(
+      (document.querySelectorAll(".fas").length /
+        document.querySelectorAll(".reviews").length) *
+        2
+    ) / 2;
+  const averageRating = Math.floor(averageRatingToHalf);
+  ratingHTML = "";
+  for (let i = 0; i < averageRating; i++) {
+    ratingHTML += `<i class="fa-solid fa-star"></i>`;
+  }
+
+  if (averageRatingToHalf !== averageRating) {
+    ratingHTML += `<i class="fa-solid fa-star-half-stroke"></i>`;
+    for (let i = 5 - averageRating; i > 1; i--) {
+      ratingHTML += `<i class="fa-regular fa-star"></i>`;
+    }
+  } else {
+    for (let i = 5 - averageRating; i > 0; i--) {
+      ratingHTML += `<i class="fa-regular fa-star"></i>`;
+    }
+  }
+
+  averageRatingBox.innerHTML = `Average Rating: ${averageRatingToHalf}/5 ${ratingHTML}`;
+}
+
 let currentMovie = {};
 async function newFormHandler(event) {
   event.preventDefault();
@@ -85,3 +114,5 @@ document.querySelector(".movieChoice").addEventListener("click", function (e) {
   document.querySelector("#movie-poster").setAttribute("src", poster);
   currentMovie = { title: title, movie_id: movie_id, poster: poster };
 });
+
+getAverage();
