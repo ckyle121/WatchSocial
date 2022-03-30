@@ -4,6 +4,25 @@ async function newFormHandler(event) {
   event.preventDefault();
 
   const movie_id = currentMovie.movie_id;
+
+  await fetch(`/api/comments/user-comments`, {
+    method: "GET",
+  })
+    .then((response) => response.json())
+    .then((result) => {
+      const previousComments = result.filter(
+        (movie) => movie.movie_id === movie_id
+      );
+      if (previousComments.length === 0) {
+        postMovie();
+      } else {
+        alert("You've already reviewed that movie!");
+      }
+    });
+}
+
+async function postMovie() {
+  const movie_id = currentMovie.movie_id;
   const title = currentMovie.title;
   const poster = currentMovie.poster;
   const comment_text = document.querySelector(
@@ -16,7 +35,6 @@ async function newFormHandler(event) {
   const movieResponse = await fetch(`/api/movie/${movie_id}`, {
     method: "GET",
   });
-
   // check to see if the movie is in the database first
   if (!movieResponse.ok) {
     // if not, add it
@@ -44,7 +62,6 @@ async function newFormHandler(event) {
       "Content-Type": "application/json",
     },
   });
-
   if (comment.ok) {
     document.location.replace("/dashboard");
   } else {
@@ -67,5 +84,4 @@ document.querySelector(".movieChoice").addEventListener("click", function (e) {
   document.querySelector("#movieReviewLabel").innerText = title;
   document.querySelector("#movie-poster").setAttribute("src", poster);
   currentMovie = { title: title, movie_id: movie_id, poster: poster };
-  console.log(currentMovie);
 });

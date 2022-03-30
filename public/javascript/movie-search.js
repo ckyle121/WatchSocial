@@ -2,7 +2,6 @@ const tryAgain = document.querySelector("#try-again");
 function movieSearch() {
   event.preventDefault();
 
-  console.log("worked");
   tryAgain.innerHTML = `<div class="spinner-border text-light" style="width: 3rem; height: 3rem;" role="status">
   <span class="visually-hidden">Loading...</span>
 </div></div>`;
@@ -25,9 +24,13 @@ function movieSearch() {
       .then((result) => {
         showMovies(result);
       })
-      .catch((error) => console.log("error", error));
+      .catch((error) => {
+        console.log("error", error);
+        tryAgain.innerHTML = "";
+      });
   } else {
     alert("Please enter search information");
+    tryAgain.innerHTML = "";
   }
 }
 
