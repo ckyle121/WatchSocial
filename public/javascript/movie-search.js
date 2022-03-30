@@ -10,7 +10,8 @@ function movieSearch() {
     method: "GET",
     redirect: "follow",
   };
-  const apiKey = process.env.API_KEY;
+
+  const apiKey = "k_m6r8p68f";
   const searchOption = document.querySelector("#movie-search").value;
   // search bar value set to nothing
   document.querySelector("#movie-search").value = "";
