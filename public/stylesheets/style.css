@@ -101,6 +101,7 @@ input:focus {
 textarea {
   min-width: 40%;
   min-height: 100px;
+  font-size: 14px;
 }
 
 form > div {
