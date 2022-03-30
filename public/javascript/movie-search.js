@@ -3,7 +3,6 @@ function movieSearch() {
   event.preventDefault();
 
   const longLoad = setTimeout(() => {
-    console.log("this is the first message");
     tryAgain.innerHTML = `<a href="/dashboard">hmmm...this is taking longer than expected.  Click here to refresh page if you are impatient</a>`;
   }, 5000);
 

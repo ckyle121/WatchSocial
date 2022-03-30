@@ -3,7 +3,6 @@ let currentMovie = {};
 const sessionUser = document
   .querySelector("#userName")
   .getAttribute("data-username");
-console.log(sessionUser);
 
 async function newFormHandler(event) {
   event.preventDefault();
