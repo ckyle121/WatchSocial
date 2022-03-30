@@ -2,6 +2,11 @@ const tryAgain = document.querySelector("#try-again");
 function movieSearch() {
   event.preventDefault();
 
+  const longLoad = setTimeout(() => {
+    console.log("this is the first message");
+    tryAgain.innerHTML = `<a href="/dashboard">hmmm...this is taking longer than expected.  Click here to refresh page if you are impatient</a>`;
+  }, 5000);
+
   tryAgain.innerHTML = `<div class="spinner-border text-light" style="width: 3rem; height: 3rem;" role="status">
   <span class="visually-hidden">Loading...</span>
 </div></div>`;
@@ -24,6 +29,7 @@ function movieSearch() {
       .then((response) => response.json())
       .then((result) => {
         showMovies(result);
+        clearTimeout(longLoad);
       })
       .catch((error) => {
         console.log("error", error);
