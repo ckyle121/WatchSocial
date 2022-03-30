@@ -1,12 +1,12 @@
 <h2 class="text-center display-4" id="currentMovieTitle">{{movie.title}}</h2>
-
+<div class="average-rate text-center mb-2"></div>
 <div class="d-flex justify-content-center">
   <img src="{{movie.poster}}" class="w-25 h-30 mb-2" id="currentMoviePoster" />
 </div>
 
 {{#if loggedIn}}
-  
-    {{#each movie.comments as |comment|}}
+
+  {{#each movie.comments as |comment|}}
     <div class="reviews mt-3">
       <div class="d-flex inline justify-content-between">
 
@@ -16,7 +16,7 @@
 
         <div class="ratebox text-center">
           {{#times comment.movie_rating}}
-            <i class="rating__star fas fa-star"></i>
+            <i class="fas fa-star"></i>
           {{/times}}
         </div>
 
